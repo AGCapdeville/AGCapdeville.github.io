@@ -1,5 +1,5 @@
 {
-  "homepage": "http://AGCapdeville.github.io/",
+  "homepage": "http://AGCapdeville.github.io/react-gh-pages/",
   "name": "react-gh-pages",
   "version": "0.1.0",
   "private": true,
@@ -9,9 +9,9 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
+    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
