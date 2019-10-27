@@ -1,2 +1,0 @@
-/* Behavior for homepage */
-
