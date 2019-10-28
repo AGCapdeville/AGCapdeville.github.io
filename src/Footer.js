@@ -10,7 +10,7 @@ function Footer() {
           <a href="https://www.linkedin.com/in/adamcapdeville/"
           >Linkedin
           </a>;
-          " | "
+          | 
           <a 
             className="App-link"
             href="https://github.com/AGCapdeville/AGCapdeville.github.io"
