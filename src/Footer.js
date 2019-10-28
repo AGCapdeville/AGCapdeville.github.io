@@ -25,4 +25,4 @@ function Footer() {
   );
 }
 
-export default App;
+export default Footer;
