@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Adam Capdeville
+          Github Pages Repo
         </a>
       </header>
     </div>
