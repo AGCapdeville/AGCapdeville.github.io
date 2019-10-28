@@ -9,15 +9,15 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <img src="https://i.imgur.com/eDmARH5.jpg" class="img-circle"/>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Adam Capdeville
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/AGCapdeville/AGCapdeville.github.io"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Adam Capdeville
         </a>
       </header>
     </div>
