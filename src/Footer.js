@@ -6,10 +6,10 @@ function Footer() {
     <div>
       <footer className="footer">
         <p>
-          "Adam Capdeville 2019 | "
+          Adam Capdeville 2019 | 
           <a href="https://www.linkedin.com/in/adamcapdeville/"
           >Linkedin
-          </a>;
+          </a>
           | 
           <a 
             className="App-link"
@@ -18,7 +18,7 @@ function Footer() {
             rel="noopener noreferrer"
           >
           <b>GitHub</b> Pages Repe 
-          </a>;
+          </a>
         </p>
       </footer>
     </div>
