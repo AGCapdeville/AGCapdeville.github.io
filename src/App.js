@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <bold>GitHub</bold> Pages Repo
+          <b>GitHub</b> Pages Repo
         </a>
       </header>
     </div>
