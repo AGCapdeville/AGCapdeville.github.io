@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import App from './Footer';
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Footer />,document.getElementById('root'));
