@@ -1,9 +1,10 @@
 import React from 'react';
 
+
 function Footer() {
   return (    
     <div>
-      <footer>
+      <footer className="footer">
         <p>
           "Adam Capdeville 2019 | "
           <a href="https://www.linkedin.com/in/adamcapdeville/"
