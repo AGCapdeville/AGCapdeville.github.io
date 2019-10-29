@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 function Nav_bar() {
   return (  
     <div>
+      <>
       <Navbar bg="dark" variant="dark">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -15,6 +16,7 @@ function Nav_bar() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      </>
     </div>
   );
 }
