@@ -1,8 +1,8 @@
 
+
 .Footer {
     display: flex;
     background-color: darkgrey;
-    align-items: center;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
