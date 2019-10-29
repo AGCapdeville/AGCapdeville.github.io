@@ -6,6 +6,5 @@ import Footer from './Footer';
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
-  ReactDOM.render(<Footer />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
