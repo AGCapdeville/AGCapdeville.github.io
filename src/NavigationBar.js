@@ -2,10 +2,9 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
-function Nav_bar() {
+function NavigationBar() {
   return (  
     <div>
-      <>
       <Navbar bg="dark" variant="dark">
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -15,9 +14,8 @@ function Nav_bar() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      </>
     </div>
   );
 }
 
-export default Nav_bar;
+export default NavigationBar;
