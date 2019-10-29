@@ -4,7 +4,6 @@ import './App.css';
 import NavigationBar from './NavigationBar.js';
 import Footer from './Footer.js';
 
-
 function App() {
   return (
     <div className="App">
