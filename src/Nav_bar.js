@@ -6,13 +6,13 @@ function Nav_bar() {
   return (  
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="AGCapdeville.github.io">Adam Capdeville</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        {/* <Navbar.Brand href="AGCapdeville.github.io">Adam Capdeville</Navbar.Brand> */}
+        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="AGCapdeville.github.io">Adam Capdeville</Nav.Link>
-            <Nav.Link href="AGCapdeville.github.io\portfolio">Portfolio</Nav.Link>
-            <Nav.Link href="AGCapdeville.github.io\blog">Blog</Nav.Link>
+            <Nav.Link href="#HOME">Adam Capdeville</Nav.Link>
+            <Nav.Link href="portfolio">Portfolio</Nav.Link>
+            <Nav.Link href="blog">Blog</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
