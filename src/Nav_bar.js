@@ -7,7 +7,6 @@ function Nav_bar() {
     <div>
       <>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="#HOME">Adam Capdeville</Nav.Link>
