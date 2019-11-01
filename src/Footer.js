@@ -1,28 +1,26 @@
 import React from 'react';
-
+import './App.css';
 
 function Footer() {
   return (    
-    <div className="footer">
-      <footer>
-        <p>
-          Adam Capdeville 2019 | 
-          <a href="https://www.linkedin.com/in/adamcapdeville/"
-          >Linkedin
-          </a>
-          | 
+    <footer className="App-footer"> 
+      <div>  
+        Adam Capdeville 2019 | 
+          <a
+            className="App-link"
+            href="https://www.linkedin.com/in/adamcapdeville/"> 
+            <b> Linkedin </b>
+          </a> |
           <a 
             className="App-link"
-            href="https://github.com/AGCapdeville/AGCapdeville.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://github.com/AGCapdeville/"
           >
-          <b>GitHub</b> Pages Repe 
+            <b> GitHub</b>
           </a>
-        </p>
-      </footer>
-    </div>
+        </div>  
+    </footer>
   );
 }
+
 
 export default Footer;

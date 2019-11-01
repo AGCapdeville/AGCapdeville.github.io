@@ -1,22 +1,112 @@
-.App {
-  text-align: center;
+
+
+
+/* ----- NavBar ----- */
+
+.nav-ul{
+  list-style: none;
+  margin: 5px 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.App-logo {
-  height: 40vmin;
+.navbar-custom {
+  background-color: rgb(34, 34, 34);
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #09d3ac;
 }
 
-.App-header {
-  background-color: #282c34;
+.selected {
+  color: #09d3ac;
+  text-decoration-color: #282c34;
+}
+
+
+
+/* ----- Main Body of CSS ----- */
+
+.App-body {
   min-height: 100vh;
+  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.App-img {
+  margin-top: 15vh;
+  margin-bottom: 2vh ;
+}
+
+.App-header {
+  margin-left: calc(10px + 1vmin);
+  margin-right: calc(10px + 1vmin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: stretch;
+}
+
+.App-container {
+  min-height: fit-content;
+  display: flex;
+  font-size: calc(4px + 2vmin);
+}
+
+
+.App-footer {
+  background-color: rgb(34, 34, 34);
+  color: rgba(255,255,255,.8);
+
+  display: flex;
+  justify-content: center;
+  /* flex-shrink: 0; */
+  /* font-size: calc(10px + 1vmin); */
+
+  align-items: center;
+  text-align: center;
+}
+
+
+/* ----- COLOR ----- */
+
+.Text_color_offwhite {
+  color: rgba(255,255,255,.8);
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+.white {
+  color: aliceblue;
+}
+
+.dorianGrey {
+  color: rgb(34, 34, 34);
+}
+
+.Section_color_grey {
+  background-color: #545b68;
+}
+
+/* ----- ALIGN ----- */
+
+.Align-right{
+  justify-content: flex-end;
 }
