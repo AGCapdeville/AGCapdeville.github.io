@@ -9,6 +9,7 @@
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
+  font-size: calc(10px + 2vmin);
 }
 
 .navbar-custom {
@@ -48,10 +49,20 @@
   font-size: calc(10px + 2vmin);
 }
 
+/* --- Profile Image & Title --- START */
 .App-img {
-  margin-top: 15vh;
-  margin-bottom: 2vh ;
+  margin-top: 10%;
+  margin-bottom: 3% ;
 }
+
+.MainTitle{
+  font-size: 200%;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+
+/* --- Profile Image & Title --- END */
 
 .App-header {
   margin-left: calc(10px + 1vmin);
@@ -62,12 +73,19 @@
   width: stretch;
 }
 
-.App-container {
+/* .App-container {
   min-height: fit-content;
   display: flex;
   font-size: calc(4px + 2vmin);
-}
+} */
 
+.App-description {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  font-size: clac(9px + 1vmin);
+  text-align: center;
+}
 
 .App-footer {
   background-color: rgb(34, 34, 34);
@@ -101,8 +119,15 @@
   color: rgb(34, 34, 34);
 }
 
-.Section_color_grey {
-  background-color: #545b68;
+.Section_color {
+  /* background-color: rgb(40, 40, 40); */
+  min-width: 100%;
+  min-height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
 }
 
 /* ----- ALIGN ----- */
@@ -110,3 +135,48 @@
 .Align-right{
   justify-content: flex-end;
 }
+
+.grid-hero{
+display: grid;
+gap: 5px;
+grid-template-columns: repeat( 3 , 1fr);
+justify-items: center;
+}
+
+
+/* probably should move this... */
+/* --- skills section css --- START*/
+
+ul{
+  font-size: calc(5px + 2vmin);
+  list-style-type: circle;
+}
+
+.Title{
+  /* font-size: 24px; */
+  margin-left: 10px;
+  font-size: calc(12px + 2vmin);
+  font-weight: bold;
+}
+.SubTitle{
+  /* font-size: 18px; */
+  font-size: calc(12px + 1.5vmin);
+  font-weight: bold;
+}
+
+/* --- skills section css --- END*/
+
+
+
+/* might not need:  */
+/* --- Mobile --- */ 
+
+/* @media (max-width: 600px){
+  .grid-hero{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat( 3 , 1fr);
+    justify-items: center;
+    }
+  
+} */

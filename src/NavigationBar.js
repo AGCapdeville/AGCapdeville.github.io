@@ -1,6 +1,6 @@
 import React from 'react';
 import NotFound from './NotFound';
-import Portfolio from './Portfolio';
+import Portfolio from './Portfolio.js';
 import Blog from './Blog';
 import Home from './Home';
 
@@ -56,6 +56,7 @@ class NavigationBar extends React.Component{
           </nav>
             
           <Switch>
+            <Router path exact="/"> <Home /> </Router>
             <Router path="/Home"> <Home /> </Router>
             <Router path="/Portfolio"> <Portfolio /> </Router>
             <Router path="/Blog"> <Blog /> </Router>
