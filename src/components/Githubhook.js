@@ -40,45 +40,44 @@ const useGithubApi = (url) => {
 }
 
 
-function mapRepos(repos){
-  if (repos == null){
-    return ("still loading")
-  }else{
-    var numberOfRepos= Object.keys(repos).length;
-    var oldestDate = repos[0]["updated_at"];
-    var indexOfOldest;
-    
-    var i;
-    for(i=0 ; i < numberOfRepos; i++){
-      if(oldestDate < repos[i]["updated_at"]){
-        oldestDate = repos[i]["updated_at"];
-        indexOfOldest = i;
-      }
-      console.log(repos[i]["updated_at"])
-    }
+// function mapRepos(){
 
-    // console.log("The oldest repo: "+oldestDate);
-    // console.log("Repo: " + repos[indexOfOldest]["name"]);
-    // return("number of repos: " + numberOfRepos +", ");
-    return indexOfOldest;
-  }
-}
+
+//   // console.log("The oldest repo: "+oldestDate);
+//   // console.log("Repo: " + repos[indexOfOldest]["name"]);
+//   // return("number of repos: " + numberOfRepos +", ");
+//   return indexOfOldest;
+// }
 
 
 
 export default () => {
   const [{data, isLoading, isError}] = useGithubApi(`https://api.github.com/users/agcapdeville/repos`);
 
-  var currentRepo = mapRepos(data);
 
-  // console.log(currentRepo);
 
   console.log(isLoading);
   if(isLoading){
     return("loading...");
   }else{
+    var numRepos= Object.keys(data).length;
+    var curRepo = 0;
+    var curDate = new Date(data[0]["updated_at"]);
+    var indexDate = new Date(data[0]["updated_at"]);
+    // console.log("----- before checks -----");
+    // console.log("index date: "+indexDate);
+    // console.log("current date: "+curDate);
+    var i = 0;
+    for (i=0; i<numRepos; i++){
+      indexDate = new Date(data[i]["updated_at"]);
+      if ( indexDate > curDate ){
+        curDate = indexDate;
+        curRepo= i;
+      }
+    }
+
     // var str = data[0]["name"];
-    var str = data[currentRepo]["name"];
+    var str = data[curRepo]["name"];
     // return(str);
     var link =  "https://github.com/AGCapdeville/"+str;
     return(
