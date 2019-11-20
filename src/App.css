@@ -1,12 +1,18 @@
 
 
+.container{
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: calc(10px + 2vmin);
+}
+
 
 /* ----- NavBar ----- */
 
 .nav-ul{
   list-style: none;
   margin: 5px 0px;
-  padding: 10px;
   display: flex;
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);
@@ -55,12 +61,22 @@
   margin-bottom: 3% ;
 }
 
-.MainTitle{
+.MainTitle {
   font-size: 200%;
   text-align: center;
   font-weight: bold;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
+.SmallLink img{
+  height: 50px;
+  width: auto;
+  display: block;
+  margin: 1px auto;
+  margin-top: 5%;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+}
+
 
 /* --- Profile Image & Title --- END */
 
@@ -73,16 +89,10 @@
   width: stretch;
 }
 
-/* .App-container {
-  min-height: fit-content;
-  display: flex;
-  font-size: calc(4px + 2vmin);
-} */
-
 .App-description {
   margin-left: 10%;
   margin-right: 10%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   font-size: clac(9px + 1vmin);
   text-align: center;
 }
@@ -146,6 +156,9 @@ justify-items: center;
 
 /* probably should move this... */
 /* --- skills section css --- START*/
+.SkillSection{
+  margin-bottom: 2%;
+}
 
 ul{
   font-size: calc(5px + 2vmin);
@@ -180,3 +193,9 @@ ul{
     }
   
 } */
+
+/* live repo box  */
+
+.Live-Repo-Box {
+  display: flex;
+}
