@@ -54,8 +54,14 @@ function mapRepos(repos){
         oldestDate = repos[i]["updated_at"];
         indexOfOldest = i;
       }
+      console.log(repos[i]["updated_at"])
     }
-    return( indexOfOldest )
+
+    console.log("The oldest repo: "+oldestDate);
+
+    console.log("Repo: " + repos[indexOfOldest]["name"]);
+
+    return("number of repos: " + numberOfRepos +", ");
   }
 }
 
@@ -64,15 +70,21 @@ function mapRepos(repos){
 export default () => {
   const [{data, isLoading, isError}] = useGithubApi(`https://api.github.com/users/agcapdeville/repos`);
 
-  var name = "Loading...";
-  var list = [];
+  console.log(isLoading);
+  if(isLoading){
+    return("loading...");
+  }else{
+    var str = data[0]["name"];
+    // return(str);
+    var link =  "https://github.com/AGCapdeville/"+str;
+    return(
+      <div>
+        [ Current Repo:
+        <a href={link} > {str} </a> ]
+      </div>
+    )
+  }
 
-  isLoading ? name="loading..." : name = ( "name: "+data[mapRepos(data)]["name"] );
-
-  // isLoading ? list[]
-
-
-  return( name );
 };
 
 

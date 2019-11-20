@@ -22,7 +22,7 @@ const Home = () => (
                 </p>
             </div>
             <div>
-                <p>What I am currently working on: <Githubhook/></p>
+                <p><Githubhook/></p>
             </div>
 
             <div className='SkillSection' >
