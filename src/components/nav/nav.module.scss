@@ -1,75 +1,91 @@
 @import "../../design-patterns/constants.scss";
 
-.container {
+.navbar {
   display: flex;
   flex-direction: row;
-  padding: 15px 100px;
+  flex-wrap: nowrap;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  width: 100%;
   color: #333;
-  box-shadow: 0 2px 5px #33dfff;
+}
 
 
-  @media(max-width: $breakpoint) {
-    flex-wrap: wrap;
-    padding: 15px 0px;
-    justify-content: space-between;
+.navbarOp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  padding-bottom: 10px;
+  padding-left: 100px;
+  font-size: 24px;
+
+}
+
+.navbarAlignRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+
+  width: 100%;
+  margin-right: 50px;
+  // font-weight: bold;
+}
+
+@media screen and (max-width: 550px) {
+  .navbarOp{
+    font-size: 15px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+  .navbarAlignRight{  
+    font-size: 15px;
+    margin-right: 30px;
+
   }
 }
-.name {
-  padding: 0px 30px;
 
-  @media(max-width: $breakpoint) {
-    text-align: left;
-    width: 50%;
-    margin-left: 15px;
-    padding: 0;
+@media screen and (max-width: 320px) {
+  .navbarOp{
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
+  .navbarAlignRight{  
+    font-size: 12px;
+    margin-right: 20px;
   }
 }
+
 
 .links {
   display: flex;
-  @media(max-width: $breakpoint) {
-    margin-top: 10px;
-    display: none;
-    width: 100%;
-    margin-bottom: -10px;
-  }
 }
 
 .link {
-  color: #777;
   display: flex;
-  text-decoration: none;
-  padding: 0px 10px;
+  padding: 15px;
 
   &:hover {
     cursor: pointer;
-    color: #333;
-  }
-
-  @media(max-width: $breakpoint) {
-    padding: 10px 15px;
-    border-top: 1px solid rgba(0,0,0,0.1);
-  }
-}
-
-.bars {
-  display: none;
-
-  @media(max-width: $breakpoint) {
-    display: block;
-    margin-right: 15px;
+    color: $hoverColor;
   }
 }
 
 .activeLink {
-  // composes: link;
-  color: #333;
-}
+  display: flex;
+  padding: 15px;
 
-
-.show {
-  display: none;
-  @media(max-width: $breakpoint) {
-    display: block;
+  &:hover {
+    cursor: pointer;
+    color: $hoverColor;
   }
 }
+

@@ -1,0 +1,31 @@
+@import "../../design-patterns/constants.scss";
+
+
+.moduleBody {
+    min-height: 100vh;
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+}
+  
+.moduleTitle {
+    font-size: 200%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+  
+.moduleSkill {
+    min-width: 100%;
+    min-height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+}
+  

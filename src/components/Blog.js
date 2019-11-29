@@ -11,8 +11,7 @@ class Blog extends React.Component {
                 </div>
             </header>
         </div>
-        )
-        
+      )
     }
 }
 

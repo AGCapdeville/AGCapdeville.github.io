@@ -1,0 +1,77 @@
+@import "../../design-patterns/constants.scss";
+
+
+.profileImage {
+    margin-top: 10%;
+    margin-bottom: 5% ;
+}
+
+.body {
+    min-height: 100vh;
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+}
+  
+.title {
+    font-size: calc(12px + 4vmin);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+.smallLink img{
+    height: 50px;
+    width: auto;
+    display: block;
+    margin: 1px auto;
+    margin-top: 5%;
+}
+
+.gridHero{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat( 3 , 1fr);
+    justify-items: center;
+}
+  
+.skills {
+    min-width: 100%;
+    min-height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+}
+
+.about {
+    display: flex;
+    width: 70%;
+    font-size: calc(12px + 2vmin);
+    margin-bottom: 3%;
+}
+  
+
+@media screen and (max-width: 550px) {
+    .about{
+      width: 90%;
+    }
+    .title{
+        font-size: calc(12px + 3vmin);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .about{
+        width: 90%;
+    }
+    .skills {
+        font-size: calc(10px + 1vmin);
+
+    }
+
+}

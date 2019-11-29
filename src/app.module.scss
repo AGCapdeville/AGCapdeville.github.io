@@ -1,0 +1,30 @@
+@import "./design-patterns/constants.scss";
+
+
+.container {
+  text-align: center;
+  font-family: $font;
+  color: $fontMainColor;
+}
+
+.header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+a {
+  color: $linkColor;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-decoration: none;
+
+  &:hover {
+      color: $hoverColor;
+      text-decoration: none;
+  }
+}

@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react';
+import styles from './app.module.scss';
 import Nav from './components/nav';
-import Home from './components/Home.js';
-import Portfolio from './components/Portfolio.js';
-import Footer from './components/Footer.js';
-import NotFound from './components/NotFound.js'
+import Footer from './components/footer';
+import Home from './components/home';
+import Portfolio from './components/portfolio';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Githubhook from './components/Githubhook';
 
 const App = () => {
-  return(
+  return (
     <Router>
-      <div>
-        <Nav/>
-        <div>
+      <div className={styles.container}>
+        <Nav />
+        <div className={styles.app}>
           <Route exact path="/" component={Home} />
           <Route exact path="/portfolio" component={Portfolio} />
         </div>
