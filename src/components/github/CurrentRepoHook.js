@@ -84,11 +84,4 @@ export default () => {
       </div>
     )
   }
-
-  // <div>
-  {/* <div className={blinkyGreen}/> */ }
-  {/* Currently Working On : [  */ }
-  {/* ] Updated: {monthName}, {day}, {year} */ }
-  // </div>
-
 };
