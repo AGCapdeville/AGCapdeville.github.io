@@ -1,0 +1,37 @@
+@import "../../design-patterns/constants.scss";
+
+.container {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.foruOfour {
+  font-size: calc(5px+10vmin);
+}
+
+
+.link {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media screen and (max-width: 550px) {
+  .container{
+    font-size: 15px;
+  }
+  .link{
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container{
+    font-size: 12px;
+  }
+  .link{
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+}
