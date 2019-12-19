@@ -16,7 +16,7 @@
 }
   
 .name {
-    font-size: calc(12px + 4vmin);
+    font-size: calc(24px + 4vmin);
     text-align: center;
     font-weight: bold;
     margin-bottom: 2%;
@@ -56,9 +56,14 @@
       width: 90%;
     }
     .name {
-        font-size: calc(12px + 3vmin);
+        font-size: calc(24px + 3vmin);
     }
     .listContainer {
         flex-direction: column;
     }
+    .list {
+        font-size: calc(20px + 1vmin);
+        margin-bottom: 2%;
+    }
+
 }
