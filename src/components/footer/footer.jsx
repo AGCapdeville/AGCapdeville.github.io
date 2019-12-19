@@ -10,16 +10,16 @@ const Footer = () => {
       {preserve}|{" "}
       <a
         className={link}
-        href="https://www.https://github.com/AGCapdeville/AGCapdeville.github.io"
-      >
+        href="https://www.https://github.com/AGCapdeville/AGCapdeville.github.io" target="_blank" >
         Source
       </a>
       |{" "}
-      <a className={link} href="https://www.linkedin.com/in/adamcapdeville/">
+      <a className={link} 
+      href="https://www.linkedin.com/in/adamcapdeville/" target="_blank" >
         Linkedin
       </a>
       |{" "}
-      <a className={link} href="https://github.com/AGCapdeville/">
+      <a className={link} href="https://github.com/AGCapdeville/" target="_blank" >
         GitHub
       </a>
     </div>
