@@ -1,15 +1,19 @@
 import React from "react";
-import { descrip } from "../../data/data";
+import { descrip, languages, frameworks, databases } from "../../data/data";
 
 import {
   profileImage,
   body,
-  gridHero,
-  title,
-  subTitle,
+  name,
   about,
-  skills
+  listTitle,
+  listContainer,
+  list
 } from "./home.module.scss";
+
+const Language = (language) => <li>{language}</li>;
+const Framework = (framework) => <li>{framework}</li>;
+const Database = (database) => <li>{database}</li>;
 
 const Home = () => (
   <div className={body}>
@@ -20,39 +24,30 @@ const Home = () => (
         alt="profile img"
       />
     </div>
-    <div className={title}>Adam G Capdeville</div>
+    <div className={name}>Adam G Capdeville</div>
     <div className={about}>
       <p>{descrip}</p>
     </div>
 
-    <div className={skills}>
-      <div className={title}>
-        {" "}
-        <b>Skills</b>{" "}
+    <div className={name}>
+        <b>Skills</b>
+    </div>
+
+    <div className={listContainer}>
+      <div className={list}>
+        <div className={listTitle}> Languages </div>
+          {languages.map(Language)}
       </div>
-      <div className={gridHero}>
-        <div className={subTitle}> Languages </div>
-        <div className={subTitle}> Frameworks & Libraries </div>
-        <div className={subTitle}> Database </div>
-        <ul>
-          <li>Java</li>
-          <li>C / C++</li>
-          <li>C#</li>
-          <li>CSS</li>
-          <li>HTML</li>
-          <li>JavaScript</li>
-        </ul>
-        <ul>
-          <li>React</li>
-          <li>React-Native</li>
-          <li>Bootstrap</li>
-        </ul>
-        <ul>
-          <li>MySQL</li>
-          <li>MongoDB</li>
-        </ul>
+      <div className={list}>
+        <div className={listTitle}> Frameworks & Libraries </div>
+        {frameworks.map(Framework)}
+      </div>
+      <div className={list}>
+        <div className={listTitle}> Database </div>
+        {databases.map(Database)}
       </div>
     </div>
+    
   </div>
 );
 

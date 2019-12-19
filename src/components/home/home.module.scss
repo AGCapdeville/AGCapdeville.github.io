@@ -3,7 +3,6 @@
 
 .profileImage {
     margin-top: 10%;
-    margin-bottom: 5% ;
 }
 
 .body {
@@ -16,62 +15,50 @@
     font-size: calc(10px + 2vmin);
 }
   
-.title {
+.name {
     font-size: calc(12px + 4vmin);
     text-align: center;
     font-weight: bold;
-    margin-bottom: 5%;
-}
-
-.smallLink img{
-    height: 50px;
-    width: auto;
-    display: block;
-    margin: 1px auto;
+    margin-bottom: 2%;
     margin-top: 5%;
-}
-
-.gridHero{
-    display: grid;
-    gap: 5px;
-    grid-template-columns: repeat( 3 , 1fr);
-    justify-items: center;
-}
-  
-.skills {
-    min-width: 100%;
-    min-height: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: calc(10px + 2vmin);
 }
 
 .about {
     display: flex;
-    width: 70%;
+    width: 85%;
     font-size: calc(12px + 2vmin);
     margin-bottom: 3%;
+}
+
+.listTitle {
+    font-weight: bold;
+}
+
+
+.listContainer {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    margin-bottom: 3%;
+}
+
+.list {
+    min-width: 30%;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
 }
   
 
 @media screen and (max-width: 550px) {
-    .about{
+    .about {
       width: 90%;
     }
-    .title{
+    .name {
         font-size: calc(12px + 3vmin);
     }
-}
-
-@media screen and (max-width: 550px) {
-    .about{
-        width: 90%;
+    .listContainer {
+        flex-direction: column;
     }
-    .skills {
-        font-size: calc(10px + 1vmin);
-
-    }
-
 }

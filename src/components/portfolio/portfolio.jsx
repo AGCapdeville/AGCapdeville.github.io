@@ -7,7 +7,7 @@ const portfolio = () => {
     <div className={moduleBody}>
       <div className={item}>
         <div className={title}> Coming soon...</div>
-        <h4>For now check out my <a href={"https://github.com/AGCapdeville"}> GitHub </a> </h4>
+        <h4>For now check out my <a href={"https://github.com/AGCapdeville"} target="_blank"> GitHub </a> </h4>
       </div>
     </div>
   );
