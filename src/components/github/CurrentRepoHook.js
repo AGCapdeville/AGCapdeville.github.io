@@ -76,7 +76,7 @@ export default () => {
         <div className={text} > CURRENTLY WORKING ON: </div>
         <div className={repoRow}>
           <div className={blinkyGreen} />
-          [<a href={link}> {data[current]["name"]} </a>]
+          [<a href={link} target="_blank"> {data[current]["name"]} </a>]
         </div>
         <div className={dateRow}>
           Updated: [<div className={dateText}> {updated} </div>]
