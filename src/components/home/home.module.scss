@@ -5,6 +5,13 @@
     margin-top: 10%;
 }
 
+img {
+    // height: auto;
+    /* Magic! */
+    max-width: 40vw;
+    max-height: 40vw;
+}
+
 .body {
     min-height: 100vh;
     background-color: #282c34;
