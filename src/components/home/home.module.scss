@@ -3,14 +3,21 @@
 
 .profileImage {
     margin-top: 10%;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
 img {
-    // height: auto;
-    /* Magic! */
-    max-width: 40vw;
-    max-height: 40vw;
+    display: inline;
+    margin: 0 auto;
+    margin-left: -25%;
+    height: 100%;
+    width: auto;
 }
+
 
 .body {
     min-height: 100vh;
