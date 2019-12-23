@@ -19,7 +19,7 @@ const Home = () => (
   <div className={body}>
     <div className={profileImage}>
       <img
-        src="https://i.imgur.com/eDmARH5.jpg"
+        src="https://i.imgur.com/NYjsR8e.jpg"
         className="rounded-circle"
         alt="profile img"
       />
