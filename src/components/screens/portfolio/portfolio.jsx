@@ -1,6 +1,7 @@
 import React from "react";
 // TODO: remove App.css, convert Portfolio to folder with Portfolio .js .jsx & .scss files
 import { moduleBody, item, title} from "./portfolio.module.scss";
+import spaceCSS from "../../space";
 
 const portfolio = () => {
   return (
