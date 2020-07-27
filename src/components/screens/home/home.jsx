@@ -42,6 +42,7 @@ const Home = () => {
         <div className={landingContainer}>
           <div>Hello, I'm Adam Capdeville.</div>
           <div>I'm a full-stack software engineer.</div>
+          <br/>
           <button className={continueButton} onClick={()=>scrollToRef(myRef)} >
             continue
           </button>

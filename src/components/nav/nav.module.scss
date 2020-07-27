@@ -5,7 +5,14 @@
   justify-content: center;
   width: 100vw;
   background-color: #1f1f1f;
+  z-index: 9999;
+}
 
+@media (min-height: 300px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .navbarInnerContainer {
@@ -15,23 +22,13 @@
   padding: 15px;
 
 }
-
 .navLink {
   padding: 0 10px;
   font-size: 12px;
 }
 
-.navbarAlignRight {
-  display: flex;
-  flex-direction: row;
-  align-items: center;  
-  justify-content: flex-end;
-  flex-wrap: nowrap;
 
-  width: 100%;
-  margin-right: 50px;
-  // font-weight: bold;
-}
+
 
 @media screen and (max-width: 550px) {
   .navbarOp{
