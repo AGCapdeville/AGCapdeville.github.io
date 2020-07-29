@@ -25,8 +25,12 @@
 .navLink {
   padding: 0 10px;
   font-size: 12px;
-}
 
+  &:active{
+    background-color: black;
+    color: black;
+  }
+}
 
 
 
@@ -38,11 +42,6 @@
     padding-right: 10px;
 
   }
-  .navbarAlignRight{  
-    font-size: 15px;
-    margin-right: 30px;
-
-  }
 }
 
 @media screen and (max-width: 320px) {
@@ -52,10 +51,6 @@
     padding-left: 10px;
     padding-right: 10px;
 
-  }
-  .navbarAlignRight{  
-    font-size: 12px;
-    margin-right: 20px;
   }
 }
 

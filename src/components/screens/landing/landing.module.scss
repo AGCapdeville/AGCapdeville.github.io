@@ -1,5 +1,65 @@
 @import "../../../design-patterns/constants.scss";
 
+.logo{
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+    left: 0;
+}
+
+.navbar {
+    height: $navbarHeight;
+    // width: 100vw;
+    // background-color: #1f1f1f;
+    z-index: 9999;
+    display: table;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    // justify-content: right;
+    background-color: transparentize($color: black, $amount: .25);
+
+}
+
+
+@media (min-height: 50px) {
+    .navbar {
+        position: sticky;
+        top: 0;
+    }
+}
+
+.navbarToggle{
+    display: flex;
+    margin-left: auto;
+    // border-color: rgb(255,102,203);
+
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+}
+ 
+
+.navLink{
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    width: 100%;
+    position: relative;
+    &:hover{
+        color: rgb(248, 147, 110);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar{
+        width: auto;
+        margin-right: 0px;
+        margin-left: auto;
+    } 
+}
+
 .landingContainer{
     display: flex;
     flex-direction: column;
@@ -31,6 +91,11 @@
         opacity: 1;
     };
 
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+
 }
 
 .screenContainer{
@@ -45,15 +110,50 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    width: 100vw;
+    height: $sectionHeight + $navbarHeight;
+    padding-top: $navbarHeight;
 }
-
-.portfolioSection{
+.workSection{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    width: 100vw;
+    height: $sectionHeight + $navbarHeight;
+    padding-top: $navbarHeight;
+    background-color: grey;
 }
+.systemSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: $sectionHeight + $navbarHeight;
+    padding-top: $navbarHeight;
+    background-color: rgb(104, 104, 104)
+}
+.influentialSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: $sectionHeight + $navbarHeight;
+    padding-top: $navbarHeight;
+    background-color: rgb(65, 65, 65)
+
+}
+.contactSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: $sectionHeight + $navbarHeight;
+    padding-top: $navbarHeight;
+    background-color: rgb(43, 43, 43)
+}
+
+
+
 
 .sectionTitle{
     display: flex;
@@ -61,7 +161,6 @@
     justify-content: center;
     align-items: center;
     font-size: 26px;
-    height: 25%;
 }
 
 .centerText{
