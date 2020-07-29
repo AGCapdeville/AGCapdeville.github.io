@@ -3,7 +3,7 @@ import { descrip, languages, frameworks, databases } from "../../../data/data"
 import { useDispatch } from 'react-redux';
 import ScrollTrigger from "react-scroll-trigger";
 
-import {ReactComponent as ReactLogo} from '../../../daruma.svg';
+import { ReactComponent as ReactLogo } from '../../../daruma.svg';
 
 import {
   Navbar,
@@ -71,7 +71,7 @@ const Home = () => {
 
       <div>
         <div ref={homeRef} className={style.landingContainer}>
-          <div>Hello, I'm <strong style={{color:'coral'}}>Adam Capdeville</strong>.</div>
+          <div>Hello, I'm <strong style={{ color: 'coral' }}>Adam Capdeville</strong>.</div>
           <div>I'm a full-stack software engineer.</div>
           <br />
           <button className={style.continueButton} onClick={() => {
@@ -84,18 +84,34 @@ const Home = () => {
         <Space />
       </div>
 
-      <Navbar collapseOnSelect expand="md" className={style.navbar}>
-        <Navbar.Toggle className={style.navbarToggle} />
-          <Navbar.Collapse > 
-            <Nav.Link eventKey="1" className={style.navLink} onClick={() => scrollToRef(homeRef)}>Home</Nav.Link>
-            <Nav.Link eventKey="2" className={style.navLink} onClick={() => scrollToRef(aboutRef)}>About</Nav.Link>
-            <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work</Nav.Link>
-            <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System</Nav.Link>
-            <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(influentialRef)}>Influential</Nav.Link>
-            <Nav.Link eventKey="6" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact</Nav.Link>
-          </Navbar.Collapse>
+      <Navbar collapseOnSelect bsPrefix='navbar' expand="md" variant="dark" className={style.navbar}>
+        <Navbar.Brand href="#home" >Adam Capdeville.</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
+        <Navbar.Collapse id="responsive-navbar-nav" className={style.navbarColapse}>
+          <Nav.Link eventKey="1" className={style.navLink} onClick={() => scrollToRef(homeRef)}>Home.</Nav.Link>
+          <Nav.Link eventKey="2" className={style.navLink} onClick={() => scrollToRef(aboutRef)}>About.</Nav.Link>
+          <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work.</Nav.Link>
+          <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System.</Nav.Link>
+          <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(influentialRef)}>Influential.</Nav.Link>
+          <Nav.Link eventKey="6" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact.</Nav.Link>
+        </Navbar.Collapse>
       </Navbar>
-      
+
+      {/* <Navbar dark collapseOnSelect expand="md" className='bg-dark'>
+        <Navbar.Toggle className={style.navbarToggle} />
+        <Navbar.Toggle/>
+        <Navbar.Collapse >
+          <Nav.Link eventKey="1" className={style.navLink} onClick={() => scrollToRef(homeRef)}>Home</Nav.Link>
+          <Nav.Link eventKey="2" className={style.navLink} onClick={() => scrollToRef(aboutRef)}>About</Nav.Link>
+          <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work</Nav.Link>
+          <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System</Nav.Link>
+          <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(influentialRef)}>Influential</Nav.Link>
+          <Nav.Link eventKey="6" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact</Nav.Link>
+        </Navbar.Collapse>
+      </Navbar> */}
+
+
+
       <div className={style.screenContainer}>
 
         <section ref={aboutRef} id='About' className={style.aboutSection}>

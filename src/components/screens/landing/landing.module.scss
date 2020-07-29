@@ -9,16 +9,24 @@
 
 .navbar {
     height: $navbarHeight;
-    // width: 100vw;
-    // background-color: #1f1f1f;
     z-index: 9999;
-    display: table;
+    display: flex;
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    // justify-content: right;
+    flex-direction: row;
+    justify-content: end;
+    flex-grow: 1;
+    // justify-content: center;
     background-color: transparentize($color: black, $amount: .25);
+}
 
+.navbarColapse{
+    justify-content: flex-end
+}
+
+@media screen and (max-width: 767px) {
+    .navbar {
+        display: table;
+    }
 }
 
 
@@ -29,11 +37,14 @@
     }
 }
 
-.navbarToggle{
-    display: flex;
-    margin-left: auto;
-    // border-color: rgb(255,102,203);
+.brand{
+    // width: 100%;
+}
 
+.navbarToggle{
+    position: absolute;
+    right: 20px;
+    top: 6px;
     &:focus{
         outline: none;
         box-shadow: none;
@@ -44,20 +55,18 @@
 .navLink{
     font-size: 16px;
     font-weight: bold;
+    display: flex;
     height: 40px;
-    width: 100%;
-    position: relative;
+    // width: 100%;
+    // justify-content: flex-end;
+    // position: relative;
+    // &:focus{
+    //     outline: none;
+    //     box-shadow: none;
+    // }
     &:hover{
-        color: rgb(248, 147, 110);
+        color: coral;
     }
-}
-
-@media screen and (max-width: 767px) {
-    .navbar{
-        width: auto;
-        margin-right: 0px;
-        margin-left: auto;
-    } 
 }
 
 .landingContainer{
