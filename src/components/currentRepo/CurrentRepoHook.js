@@ -75,7 +75,7 @@ export default () => {
       <div className={container}>
         <div className={text} > CURRENTLY WORKING ON: </div>
         <div className={repoRow}>
-          <div className={blinkyGreen} />
+          {/* <div className={blinkyGreen} /> */}
           [<a href={link} target="_blank"> {data[current]["name"]} </a>]
         </div>
         <div className={dateRow}>
