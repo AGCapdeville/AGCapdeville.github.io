@@ -2,12 +2,17 @@ import React, { useState, useRef, useEffect } from "react";
 import { descrip, languages, frameworks, databases } from "../../../data/data"
 import { useDispatch } from 'react-redux';
 import ScrollTrigger from "react-scroll-trigger";
+import { GoMailRead } from 'react-icons/go';
+import { TiSocialFacebook, TiSocialLinkedin, TiSocialGithub } from 'react-icons/ti'
 
-import { ReactComponent as ReactLogo } from '../../../daruma.svg';
+// import { ReactComponent as ReactLogo } from '../../../daruma.svg';
 
 import {
   Navbar,
   Nav,
+  Button,
+  Row,
+  Col
 } from 'react-bootstrap'
 
 import style from './landing.module.scss'
@@ -18,7 +23,7 @@ import Footer from '../../footer';
 import { useNav, setActiveNav } from '../../../ducks/nav';
 import { white, green } from "color-name";
 
-import CurrentRepo from '../../currentRepo/CurrentRepoHook.js';
+import CurrentRepo from '../../currentRepo/currentRepo.jsx';
 
 import GitHub from '../../github'
 
@@ -51,6 +56,8 @@ const Home = () => {
   const influentialRef = useRef(null)
   const contactRef = useRef(null)
 
+  const contactIconSize = '13vw';
+
 
   return (
     <div className={style.body}>
@@ -78,7 +85,7 @@ const Home = () => {
           <Nav.Link eventKey="2" className={style.navLink} onClick={() => scrollToRef(aboutRef)}>About.</Nav.Link>
           <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work.</Nav.Link>
           <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System.</Nav.Link>
-          <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(influentialRef)}>Influential.</Nav.Link>
+          {/* <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(influentialRef)}>Influential.</Nav.Link> */}
           <Nav.Link eventKey="6" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact.</Nav.Link>
         </Navbar.Collapse>
       </Navbar>
@@ -102,7 +109,9 @@ const Home = () => {
         </section>
 
         <section ref={workRef} id='Work' className={style.workSection}>
-          <strong className={style.sectionTitle}>Work</strong>
+          <br />
+          <strong className={style.sectionTitle}>- Work -</strong>
+          <br />
           <CurrentRepo />
           <br />
           <GitHub />
@@ -112,17 +121,39 @@ const Home = () => {
           <strong className={style.sectionTitle}>System</strong>
         </section>
 
-        <section ref={influentialRef} id='Influential' className={style.influentialSection}>
+        {/* <section ref={influentialRef} id='Influential' className={style.influentialSection}>
           <strong className={style.sectionTitle}>Influential</strong>
-        </section>
+        </section> */}
 
         <section ref={contactRef} id='Contact' className={style.contactSection}>
-          <strong className={style.sectionTitle}>Contact</strong>
+          <div className={style.sectionTitle}>Lets connect,</div>
+          <Row className={style.contactIconContainer}>
+            <div
+              className={style.contactIcon}
+              onClick={() => window.location.href = "mailto:agcapdeville@gmail.com"} target="_blank" >
+              <GoMailRead size={contactIconSize} />
+            </div>
+            <a
+              className={style.contactIcon}
+              href="https://www.facebook.com/adam.capdeville.90" target="_blank" >
+              <TiSocialFacebook size={contactIconSize} />
+            </a>
+            <a
+              className={style.contactIcon}
+              href="https://www.linkedin.com/in/adamcapdeville/" target="_blank" >
+                <TiSocialLinkedin size={contactIconSize}/>
+            </a>
+            <a
+              className={style.contactIcon}
+              href="https://github.com/AGCapdeville" target="_blank" >
+              <TiSocialGithub size={contactIconSize} />
+            </a>
+          </Row>
         </section>
 
       </div>
-
       <Footer />
+
 
     </div>
   )

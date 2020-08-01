@@ -1,0 +1,102 @@
+.reposContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.repoCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 10px;
+    width: 20vw;
+    height: auto;
+    background-color: #363636;
+
+    
+    transition-duration: .25s;
+    transition-property: transform;
+
+    color: white;
+    background-color: rgb(104, 104, 104);
+
+	&:hover {
+		transform: translateY(-15%); /* move the element up by 5px */
+        color: coral;
+
+		&:before {
+			opacity: 1;
+			transform: translateY(15%); /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+		}
+	}
+
+
+}
+
+.repoTitle{
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    width: 100%;
+    color: coral;
+}
+
+.repoImage{
+    width: 100%;
+    height: 100px;
+    background-color: #7777;
+}
+
+.repoText{
+    font-size: 10px;
+    padding: 5px;
+    width: 100%;
+    // color: #7777;
+    color: white;
+}
+
+.languageIconContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.languageIcon{
+    display: flex;
+    justify-content: center;
+    font-size: 5vw;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 88, 0);
+}
+
+.languageIconDefault{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 88, 0); 
+}
+
+
+@media screen and (max-width: 767px) {
+    .repoTitle {
+        font-size: 12px;
+    }
+
+    .repoCard {
+        width: 40vw;
+    }
+
+
+
+}
+

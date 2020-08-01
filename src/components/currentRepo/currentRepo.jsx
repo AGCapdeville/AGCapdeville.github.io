@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { blinkyGreen, container, dateText, repoRow, dateRow, text } from './github.module.scss';
+import style from './currentRepo.module.scss';
 import { user } from '../../data/data'
+import { func } from 'prop-types';
 
 const useGithubApi = url => {
   const [data, setData] = useState(null);
@@ -54,7 +55,7 @@ function getMonthName(monthNumber) {
   return (month[monthNumber]);
 }
 
-export default () => {
+const CurrentRepo = () => {
   var url = `https://api.github.com/users/${user}/repos`;
   const [{ data, isLoading }] = useGithubApi(url);
 
@@ -72,16 +73,30 @@ export default () => {
     const updated = `${monthName}, ${day}, ${year}`;
 
     return (
-      <div className={container}>
-        <div className={text} > CURRENTLY WORKING ON: </div>
-        <div className={repoRow}>
-          {/* <div className={blinkyGreen} /> */}
-          [<a href={link} target="_blank"> {data[current]["name"]} </a>]
+      <div className={style.container}>
+       
+        <div className={style.repoRow}>
+          <div className={style.repo}>
+            <div className={style.text} >
+              Most Recent Commit: [
+              <a href={link} className={style.repoLink} target="_blank">
+                {data[current].name} 
+              </a>]
+            </div>
+            [<div className={style.dateText}> {updated} </div>]
+          </div>
         </div>
-        <div className={dateRow}>
-          Updated: [<div className={dateText}> {updated} </div>]
+
+        <div className={style.repoRow}>
+          GitHub Repo Total:
+          [<a className={style.repoLink} href={'https://github.com/AGCapdeville?tab=repositories'} target="_blank"> 
+            {data.length} 
+          </a>]
         </div>
+
       </div>
     )
   }
 };
+
+export default CurrentRepo;

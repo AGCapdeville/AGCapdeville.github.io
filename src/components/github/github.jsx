@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { blinkyGreen, container, dateText, repoRow, dateRow, text } from './github.module.scss';
-import { user } from '../../data/data'
+import { user } from '../../data/data';
+import { Col } from 'react-bootstrap';
+import { DiJavascript1 } from 'react-icons/di';
+import { DiJava, DiPython } from 'react-icons/di';
+
+import style from './github.module.scss';
 
 const useGithubApi = url => {
   const [data, setData] = useState(null);
@@ -55,7 +59,7 @@ function getMonthName(monthNumber) {
 }
 
 export default () => {
-  var url = `https://api.github.com/users/${user}/repos`;
+  var url = `https://api.github.com/users/${user}/starred`;
   const [{ data, isLoading }] = useGithubApi(url);
 
   if (isLoading) {
@@ -64,7 +68,6 @@ export default () => {
     var current = iNewestRepo(data);
     var link = `https://github.com/${user}/${data[current]["name"]}`;
 
-
     // const d = new Date(Date.parse(data[current]["updated_at"]));
     // const day = d.getDate();
     // const monthName = getMonthName(d.getMonth());
@@ -72,12 +75,59 @@ export default () => {
 
     // const updated = `${monthName}, ${day}, ${year}`;
 
-    console.log('github obj:',current)
+    // console.log('github obj:',current)
+
+    const languageIcon = (language) => {
+      switch (language) {
+        case 'JavaScript':
+          return (
+            <div className={style.languageIconContainer}>
+              <DiJavascript1 className={style.languageIcon} />
+            </div>
+          )
+        case 'Python':
+          return (
+            <div className={style.languageIconContainer}>
+              <DiPython className={style.languageIcon} />
+            </div>)
+        case 'Java':
+          return (
+            <div className={style.languageIconContainer}>
+              <DiJava className={style.languageIcon} />
+            </div>
+          )
+
+        default:
+          return (
+            <div className={style.languageIconContainer}>
+            <div className={style.languageIconDefault}> {language} </div>
+          </div>
+          )
+      }
+    }
+
 
     return (
-      <div>
-        Here are my mapped out repos...
+      <div className={style.reposContainer}>
+        
+        {data.map((repo, index) => {
+          if (repo.description != null) {
+            return (
+              <a key={index} href={repo.html_url} target="_blank">
+                <div className={style.repoCard}>
+                  <div className={style.repoTitle}>{repo.name}</div>
+                  <div className={style.repoImage}>{languageIcon(repo.language)}</div>
+                  <div className={style.repoText}>{repo.description}</div>
+                </div>
+              </a>
+            )
+          }
+        })}
+
       </div>
+    )
+
+
     //   <div className={container}>
     //     <div className={text} > CURRENTLY WORKING ON: </div>
     //     <div className={repoRow}>
@@ -88,6 +138,6 @@ export default () => {
     //       Updated: [<div className={dateText}> {updated} </div>]
     //     </div>
     //   </div>
-    )
+    // )
   }
 };

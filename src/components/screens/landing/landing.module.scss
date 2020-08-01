@@ -23,20 +23,6 @@
     justify-content: flex-end
 }
 
-@media screen and (max-width: 767px) {
-    .navbar {
-        display: table;
-    }
-}
-
-
-@media (min-height: 50px) {
-    .navbar {
-        position: sticky;
-        top: 0;
-    }
-}
-
 .brand{
     // width: 100%;
 }
@@ -57,13 +43,7 @@
     font-weight: bold;
     display: flex;
     height: 40px;
-    // width: 100%;
-    // justify-content: flex-end;
-    // position: relative;
-    // &:focus{
-    //     outline: none;
-    //     box-shadow: none;
-    // }
+
     &:hover{
         color: coral;
     }
@@ -98,6 +78,10 @@
     
     &:hover{
         opacity: 1;
+        color: coral;
+        // border: 1px solid coral; /* Green */
+        // background-color: coral;
+
     };
 
     &:focus{
@@ -115,6 +99,7 @@
     width: 85%;
 }
 
+
 .aboutSection{
     display: flex;
     flex-direction: column;
@@ -130,7 +115,7 @@
     width: 100vw;
     height: $sectionHeight + $navbarHeight;
     padding-top: $navbarHeight;
-    background-color: black;
+    background-color: #131313;
 }
 .systemSection{
     display: flex;
@@ -151,33 +136,59 @@
     background-color: rgb(65, 65, 65)
 
 }
+
+
 .contactSection{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    height: $sectionHeight + $navbarHeight;
+    height: $sectionHeight - 300 + $navbarHeight;
     padding-top: $navbarHeight;
-    background-color: rgb(43, 43, 43)
+    background-color: #131313
 }
+.contactIconContainer{
+    display: flex;
+    padding-top: 10%;
+    width: 100vw;
+    justify-content: space-evenly;
+}
+.contactIcon{
+    display: flex;
+    position: relative;
+    padding: 5px;
+    margin: 15px;
+    
+	transition-duration: .25s;
+    transition-property: transform;
 
+    color: white;
+    background-color: rgb(104, 104, 104);
 
+	&:hover {
+		transform: translateY(-15%); /* move the element up by 5px */
+        color: coral;
 
+		&:before {
+			opacity: 1;
+			transform: translateY(15%); /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+		}
+	}
+}
 
 .sectionTitle{
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
+    font-size: 4vw;
+    font-weight: bold;
 }
-
 .centerText{
     display: flex;
     flex-direction: column;
     text-align: center;
 }
-
 .profileImage {
     margin-top: 10%;
     width: 250px;
@@ -187,9 +198,6 @@
     border-radius: 50%;
 }
 
-
-
-
 img {
     display: inline;
     margin: 0 auto;
@@ -197,7 +205,6 @@ img {
     height: 100%;
     width: auto;
 }
-
 
 .body {
     min-height: 100vh;
@@ -222,7 +229,6 @@ img {
     font-weight: bold;
 }
 
-
 .listContainer {
     width: 85%;
     display: flex;
@@ -236,8 +242,7 @@ img {
     min-width: 30%;
     flex-direction: column;
     font-size: calc(10px + 2vmin);
-}
-  
+}  
 
 @media screen and (max-width: 550px) {
     .about {
@@ -254,4 +259,21 @@ img {
         margin-bottom: 2%;
     }
 
+}
+
+@media screen and (max-width: 767px) {
+    .navbar {
+        display: table;
+    }
+    .sectionTitle{
+        font-size: 5vw;
+    }
+}
+
+
+@media (min-height: 50px) {
+    .navbar {
+        position: sticky;
+        top: 0;
+    }
 }

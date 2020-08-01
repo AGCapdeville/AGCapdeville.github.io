@@ -2,6 +2,7 @@ import React from "react";
 
 import './space.scss'
 
+
 const Space = () => {
 
   return(
@@ -11,6 +12,7 @@ const Space = () => {
       <div id='starsL'/> 
     </div>
   )
+
 }
 
 export default Space;
