@@ -119,11 +119,17 @@ const Home = () => {
         </section>
 
         <section ref={systemRef} id='System' className={style.systemSection}>
-          <strong className={style.sectionTitle}>System</strong>
+          <strong className={style.sectionTitle}>My System.</strong>
+          <br />
+          <strong className={style.sectionTitle}>Be Goal Oriented.</strong> 
+          <strong className={style.sectionTitle}>Fail Quickly, And Get Back Up.</strong> 
+          <strong className={style.sectionTitle}>Be Reslient, And Determined.</strong> 
+          <strong className={style.sectionTitle}>Complete, And Repeat.</strong> 
           
           <div className={style.daruma_container}>
             <div> <img src={darumaImg} className={style.daruma}/> </div>
             <div className={style.daruma_shadow} />
+            <div className={style.daruma_shadow_m} />
           </div>
 
         </section>

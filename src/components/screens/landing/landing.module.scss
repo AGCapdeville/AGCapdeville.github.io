@@ -143,19 +143,40 @@
     width: 25vh;
     height: auto;
     margin: 0;
-    margin-left: 5%;
+    // margin-left: 5%;
     -webkit-animation: daruma 2s cubic-bezier(0.645, 0.045, 0.355, 1);
     animation: daruma 2s cubic-bezier(0.645, 0.045, 0.355, 1);
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+    z-index: 1;
 }
 
 .daruma_shadow {
-    width: 30vh;
-    height: 4vh;
-    left: calc(50vw - 15vh);
+    position: absolute;
+    margin-top: 23vh;
+    width: 15vh;
+    height: 3vh;
+    z-index: 0;
+    // left: calc(50vw - 15vh);
     border-radius: 50%;
     background: black;
+    opacity: .5;
+    -webkit-animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.daruma_shadow_m {
+    position: absolute;
+    margin-top: 23vh;
+    width: 10vh;
+    height: 2.7vh;
+    z-index: 0;
+    // left: calc(50vw - 15vh);
+    border-radius: 50%;
+    background: black;
+    opacity: .5;
     -webkit-animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
     animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
     -webkit-animation-iteration-count: infinite;
