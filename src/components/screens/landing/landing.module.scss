@@ -130,8 +130,8 @@
 
 .daruma_container{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    // justify-content: center;
+    margin-top: 10vh;
     align-items: center;
     flex-direction: column;
     width: 100%;
@@ -139,11 +139,7 @@
 }
 
 .daruma{
-    display: flex;  
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
+    position: relative;
     width: 25vh;
     height: auto;
     margin: 0;
@@ -155,10 +151,8 @@
 }
 
 .daruma_shadow {
-    display: block;
     width: 30vh;
     height: 4vh;
-
     left: calc(50vw - 15vh);
     border-radius: 50%;
     background: black;
