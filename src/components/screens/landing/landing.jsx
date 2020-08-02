@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import ScrollTrigger from "react-scroll-trigger";
 import { GoMailRead } from 'react-icons/go';
 import { TiSocialFacebook, TiSocialLinkedin, TiSocialGithub } from 'react-icons/ti'
+import darumaImg from '../../../daruma.png'
 
 // import { ReactComponent as ReactLogo } from '../../../daruma.svg';
 
@@ -119,6 +120,12 @@ const Home = () => {
 
         <section ref={systemRef} id='System' className={style.systemSection}>
           <strong className={style.sectionTitle}>System</strong>
+          
+          <div className={style.daruma_container}>
+            <div> <img src={darumaImg} className={style.daruma}/> </div>
+            <div className={style.daruma_shadow} />
+          </div>
+
         </section>
 
         {/* <section ref={influentialRef} id='Influential' className={style.influentialSection}>

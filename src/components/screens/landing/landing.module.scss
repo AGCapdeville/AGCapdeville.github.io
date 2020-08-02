@@ -117,6 +117,7 @@
     padding-top: $navbarHeight;
     background-color: #131313;
 }
+
 .systemSection{
     display: flex;
     flex-direction: column;
@@ -126,6 +127,111 @@
     padding-top: $navbarHeight;
     background-color: rgb(104, 104, 104)
 }
+
+.daruma_container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.daruma{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    width: 25vh;
+    height: auto;
+    margin: 0;
+    margin-left: 5%;
+    -webkit-animation: daruma 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation: daruma 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.daruma_shadow {
+    display: block;
+    width: 30vh;
+    height: 4vh;
+
+    left: calc(50vw - 15vh);
+    border-radius: 50%;
+    background: black;
+    -webkit-animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes daruma {
+    0% {
+      -webkit-transform: rotate(-20deg);
+      transform-origin: center;
+      left: -12vh;
+    }
+    50% {
+      -webkit-transform: rotate(25deg);
+      transform-origin: center;
+      left: 12vh;
+    }
+    100% {
+      -webkit-transform: rotate(-20deg);
+      transform-origin: center;
+      left: -12vh;
+    }
+}
+  @keyframes daruma {
+    0% {
+      -webkit-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+      transform-origin: center;
+      left: -12vh;
+    }
+    50% {
+      -webkit-transform: rotate(25deg);
+      transform: rotate(25deg);
+      transform-origin: center;
+      left: 12vh;
+    }
+    100% {
+      -webkit-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+      transform-origin: center;
+      left: -12vh;
+    }
+}
+  
+  @-webkit-keyframes shadow {
+    0% {
+      -webkit-transform: translateX(-8vh);
+    }
+    50% {
+      -webkit-transform: translateX(8vh);
+    }
+    100% {
+      -webkit-transform: translateX(-8vh);
+    }
+}
+  @keyframes shadow {
+    0% {
+      -webkit-transform: translateX(-8vh);
+      transform: translateX(-8vh);
+    }
+    50% {
+      -webkit-transform: translateX(8vh);
+      transform: translateX(8vh);
+    }
+    100% {
+      -webkit-transform: translateX(-8vh);
+      transform: translateX(-8vh);
+    }
+}
+
 .influentialSection{
     display: flex;
     flex-direction: column;
