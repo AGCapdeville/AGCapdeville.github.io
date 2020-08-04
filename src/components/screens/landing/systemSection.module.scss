@@ -1,0 +1,221 @@
+@import "../../../design-patterns/constants.scss";
+
+.systemSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  padding-top: $navbarHeight;
+  background-color: rgb(104, 104, 104)
+}
+
+.aboutDaruma{
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  flex-direction: column;
+  width: 70vw;
+}
+.mySystemText{
+  font-size: 7vh;
+  font-weight: bold;
+  color: coral;
+}
+
+
+.darumaQuote{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: $font;
+}
+.darumaQuoteText{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 4.5vh;
+}
+.leftQuote{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 25%;
+  font-size: 4vh;
+}
+.rightQuote{
+  display: flex;
+  justify-content: flex-start;
+  transform: rotate(180deg);
+  width: 100%;
+  padding-left: 25%;
+  font-size: 4vh;
+}
+.darumaQuoteEnd{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-right: 20vw;
+}
+
+
+.daruma_container{
+  display: flex;
+  margin-top: 1vh;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.daruma{
+  position: relative;
+  width: 22.5vh;
+  height: auto;
+  margin: 0;
+  -webkit-animation: daruma 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: daruma 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+.daruma_shadow_container{
+  position: absolute;
+  margin-top: 20.5vh;
+  display: flex;
+  justify-content: center;
+}
+.daruma_shadow {
+  position: absolute;
+  width: 15.5vh;
+  height: 3vh;
+  z-index: 0;
+  border-radius: 50%;
+  background: black;
+  opacity: .5;
+  -webkit-animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.daruma_shadow_m {
+  position: absolute;
+  width: 12.5vh;
+  height: 2.7vh;
+  z-index: 0;
+  border-radius: 50%;
+  background: black;
+  opacity: .5;
+  -webkit-animation: shadow_m 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: shadow_m 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
+@media screen and (max-width: 767px){
+  .mySystemText{
+    font-size: 6vw;
+  }
+  .aboutDaruma{
+    width: 90vw;
+  }
+  .rightQuote{
+    padding-left: 10%;
+  }
+  .leftQuote{
+    padding-left: 10%;
+  }
+}
+
+@-webkit-keyframes daruma {
+  0% {
+    -webkit-transform: rotate(-20deg);
+    transform-origin: center;
+    left: -12vh;
+  }
+  50% {
+    -webkit-transform: rotate(25deg);
+    transform-origin: center;
+    left: 12vh;
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+    transform-origin: center;
+    left: -12vh;
+  }
+}
+@keyframes daruma {
+  0% {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    transform-origin: center;
+    left: -12vh;
+  }
+  50% {
+    -webkit-transform: rotate(25deg);
+    transform: rotate(25deg);
+    transform-origin: center;
+    left: 12vh;
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    transform-origin: center;
+    left: -12vh;
+  }
+}
+@-webkit-keyframes shadow {
+  0% {
+    -webkit-transform: translateX(-8vh);
+  }
+  50% {
+    -webkit-transform: translateX(8vh);
+  }
+  100% {
+    -webkit-transform: translateX(-8vh);
+  }
+}
+@keyframes shadow {
+  0% {
+    -webkit-transform: translateX(-8vh);
+    transform: translateX(-8vh);
+  }
+  50% {
+    -webkit-transform: translateX(8vh);
+    transform: translateX(8vh);
+  }
+  100% {
+    -webkit-transform: translateX(-8vh);
+    transform: translateX(-8vh);
+  }
+}
+@-webkit-keyframes shadow_m {
+  0% {
+    -webkit-transform: translateX(-9vh);
+  }
+  50% {
+    -webkit-transform: translateX(9vh);
+  }
+  100% {
+    -webkit-transform: translateX(-9vh);
+  }
+}
+@keyframes shadow_m {
+  0% {
+    -webkit-transform: translateX(-9vh);
+    transform: translateX(-9vh);
+  }
+  50% {
+    -webkit-transform: translateX(9vh);
+    transform: translateX(9vh);
+  }
+  100% {
+    -webkit-transform: translateX(-9vh);
+    transform: translateX(-9vh);
+  }
+}

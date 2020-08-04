@@ -1,22 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
-import { descrip, languages, frameworks, databases } from "../../../data/data"
-import { useDispatch } from 'react-redux';
-import ScrollTrigger from "react-scroll-trigger";
-import { GoMailRead } from 'react-icons/go';
+import React, { useState, useRef, useEffect } from 'react'
+import { descrip, languages, frameworks, databases, mySystemText, darumaInfo, darumaWhy, darumaQuote } from '../../../data/data'
+import { useDispatch } from 'react-redux'
+import ScrollTrigger from 'react-scroll-trigger'
+import { GoMailRead, GoQuote } from 'react-icons/go'
 import { TiSocialFacebook, TiSocialLinkedin, TiSocialGithub } from 'react-icons/ti'
 import darumaImg from '../../../daruma.png'
-
-// import { ReactComponent as ReactLogo } from '../../../daruma.svg';
 
 import {
   Navbar,
   Nav,
   Button,
   Row,
-  Col
+  Col,
 } from 'react-bootstrap'
 
 import style from './landing.module.scss'
+import systemStyle from './systemSection.module.scss';
+
+import './fadeIn.css'
 
 import Space from '../../space';
 import Footer from '../../footer';
@@ -34,11 +35,27 @@ const Database = (database) => <li>{database}</li>;
 
 
 
-// const navbarHeight = 56;
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <div
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}
+    >
+      {props.children}
+    </div>
+  );
+}
 
 const scrollToRef = (ref) => {
   window.scrollTo({
-    // top: ref.current.offsetTop - navbarHeight,
     top: ref.current.offsetTop,
     behavior: 'smooth'
   })
@@ -56,9 +73,6 @@ const Home = () => {
   const systemRef = useRef(null)
   const influentialRef = useRef(null)
   const contactRef = useRef(null)
-
-  const contactIconSize = '13vw';
-
 
   return (
     <div className={style.body}>
@@ -87,14 +101,14 @@ const Home = () => {
           <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work.</Nav.Link>
           <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System.</Nav.Link>
           {/* <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(influentialRef)}>Influential.</Nav.Link> */}
-          <Nav.Link eventKey="6" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact.</Nav.Link>
+          <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact.</Nav.Link>
         </Navbar.Collapse>
       </Navbar>
 
       <div className={style.screenContainer}>
 
         <section ref={aboutRef} id='About' className={style.aboutSection}>
-          <strong className={style.sectionTitle}>About</strong>
+          <strong className={style.sectionTitle}>About.</strong>
           <div className={style.profileImage}>
             <img
               src="https://i.imgur.com/NYjsR8e.jpg"
@@ -111,25 +125,64 @@ const Home = () => {
 
         <section ref={workRef} id='Work' className={style.workSection}>
           <br />
-          <strong className={style.sectionTitle}>- Work -</strong>
+          <strong className={style.sectionTitle}>Work.</strong>
           <br />
           <CurrentRepo />
           <br />
           <GitHub />
         </section>
 
-        <section ref={systemRef} id='System' className={style.systemSection}>
+        <section ref={systemRef} id='System' className={systemStyle.systemSection}>
           <strong className={style.sectionTitle}>My System.</strong>
           <br />
-          <strong className={style.sectionTitle}>Be Goal Oriented.</strong> 
-          <strong className={style.sectionTitle}>Fail Quickly, And Get Back Up.</strong> 
-          <strong className={style.sectionTitle}>Be Reslient, And Determined.</strong> 
-          <strong className={style.sectionTitle}>Complete, And Repeat.</strong> 
-          
-          <div className={style.daruma_container}>
-            <div> <img src={darumaImg} className={style.daruma}/> </div>
-            <div className={style.daruma_shadow} />
-            <div className={style.daruma_shadow_m} />
+
+          {mySystemText.map(line => (
+            <div className={'box'}>
+              <FadeInSection key={line}>
+                <strong className={systemStyle.mySystemText}>{line}</strong>
+              </FadeInSection>
+            </div>
+          ))}
+
+
+          <div className={systemStyle.daruma_container}>
+            <img src={darumaImg} className={systemStyle.daruma} />
+            <div className={systemStyle.daruma_shadow_container} >
+              <div className={systemStyle.daruma_shadow} />
+              <div className={systemStyle.daruma_shadow_m} />
+            </div>
+          </div>
+
+
+          <div className={systemStyle.aboutDaruma}>
+
+            <br />
+            <strong>What Is A Daruma doll?</strong>
+            <p>{darumaInfo}</p>
+            <br />
+
+            <div>
+              <div className={systemStyle.darumaQuote}>
+                <div className={systemStyle.leftQuote}>
+                  <GoQuote />
+                </div>
+                <div className={systemStyle.darumaQuoteText}>
+                  <div>{darumaQuote[0]}</div>
+                  <div>{darumaQuote[1]}</div>
+                </div>
+                <div className={systemStyle.rightQuote}>
+                  <GoQuote />
+                </div>
+              </div>
+              <div className={systemStyle.darumaQuoteEnd}>
+                <strong className={systemStyle.darumaQuoteEnd}>{darumaQuote[3]}</strong>
+              </div>
+            </div>
+
+            <br />
+            <strong>Why The Daruma doll?</strong>
+            <p>{darumaWhy}</p>
+            <br />
           </div>
 
         </section>
@@ -144,22 +197,22 @@ const Home = () => {
             <div
               className={style.contactIcon}
               onClick={() => window.location.href = "mailto:agcapdeville@gmail.com"} target="_blank" >
-              <GoMailRead size={contactIconSize} />
+              <GoMailRead className={style.icon} />
             </div>
             <a
               className={style.contactIcon}
               href="https://www.facebook.com/adam.capdeville.90" target="_blank" >
-              <TiSocialFacebook size={contactIconSize} />
+              <TiSocialFacebook className={style.icon} />
             </a>
             <a
               className={style.contactIcon}
               href="https://www.linkedin.com/in/adamcapdeville/" target="_blank" >
-                <TiSocialLinkedin size={contactIconSize}/>
+              <TiSocialLinkedin className={style.icon} />
             </a>
             <a
               className={style.contactIcon}
               href="https://github.com/AGCapdeville" target="_blank" >
-              <TiSocialGithub size={contactIconSize} />
+              <TiSocialGithub className={style.icon} />
             </a>
           </Row>
         </section>
