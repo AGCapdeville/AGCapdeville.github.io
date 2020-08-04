@@ -11,7 +11,7 @@ import {
   Nav,
   Button,
   Row,
-  Col,
+  Fade,
 } from 'react-bootstrap'
 
 import style from './landing.module.scss'
@@ -32,7 +32,6 @@ import GitHub from '../../github'
 const Language = (language) => <li>{language}</li>;
 const Framework = (framework) => <li>{framework}</li>;
 const Database = (database) => <li>{database}</li>;
-
 
 
 function FadeInSection(props) {
@@ -61,11 +60,41 @@ const scrollToRef = (ref) => {
   })
 }
 
-
-
 const Home = () => {
 
-  // const dispatch = useDispatch();
+
+  const [darumaText, setDarumaText] = useState(true);
+  const [darumaWhyText, setWhyText] = useState(false);
+  const [darumaWhatText, setWhatText] = useState(false);
+
+  const toggleDarumaText = (text) => {
+    console.log('toggle:', text);
+    switch (text) {
+      case 'daruma':
+        setDarumaText(true);
+        setWhyText(false);
+        setWhatText(false);
+        console.log('inside: daruma');
+        break;
+
+      case 'why':
+        setDarumaText(false);
+        setWhyText(true);
+        setWhatText(false);
+        console.log('inside: why');
+        break;
+
+      case 'what':
+        setDarumaText(false);
+        setWhyText(false);
+        setWhatText(true);
+        console.log('inside: what');
+        break;
+
+      default:
+        break;
+    }
+  }
 
   const homeRef = useRef(null)
   const aboutRef = useRef(null)
@@ -100,7 +129,6 @@ const Home = () => {
           <Nav.Link eventKey="2" className={style.navLink} onClick={() => scrollToRef(aboutRef)}>About.</Nav.Link>
           <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work.</Nav.Link>
           <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System.</Nav.Link>
-          {/* <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(influentialRef)}>Influential.</Nav.Link> */}
           <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact.</Nav.Link>
         </Navbar.Collapse>
       </Navbar>
@@ -112,7 +140,7 @@ const Home = () => {
           <div className={style.profileImage}>
             <img
               src="https://i.imgur.com/NYjsR8e.jpg"
-              className="rounded-circle"
+              // className="rounded-circle"
               alt="profile img"
             />
           </div>
@@ -153,36 +181,70 @@ const Home = () => {
             </div>
           </div>
 
+          <div className={systemStyle.darumaToggleInfoOuterContainer}>
 
-          <div className={systemStyle.aboutDaruma}>
-
-            <br />
-            <strong>What Is A Daruma doll?</strong>
-            <p>{darumaInfo}</p>
-            <br />
-
-            <div>
-              <div className={systemStyle.darumaQuote}>
-                <div className={systemStyle.leftQuote}>
-                  <GoQuote />
-                </div>
-                <div className={systemStyle.darumaQuoteText}>
-                  <div>{darumaQuote[0]}</div>
-                  <div>{darumaQuote[1]}</div>
-                </div>
-                <div className={systemStyle.rightQuote}>
-                  <GoQuote />
-                </div>
-              </div>
-              <div className={systemStyle.darumaQuoteEnd}>
-                <strong className={systemStyle.darumaQuoteEnd}>{darumaQuote[3]}</strong>
-              </div>
+            <div className={systemStyle.darumaToggleButtonsContainer}>
+              <button
+                onClick={() => toggleDarumaText('why')}
+                aria-controls="darumaWhyText"
+                aria-expanded={darumaWhyText}
+                className={systemStyle.darumaToggleButton}
+              >
+                Why Daruma?
+              </button>
+              <button
+                onClick={() => toggleDarumaText('daruma')}
+                aria-controls="darumaText"
+                aria-expanded={darumaText}
+                className={systemStyle.darumaToggleButton}
+              >
+                - Daruma -
+              </button>
+              <button
+                onClick={() => toggleDarumaText('what')}
+                aria-controls="darumaWhatText"
+                aria-expanded={darumaWhatText}
+                className={systemStyle.darumaToggleButton}
+              >
+                What Is Daruma?
+              </button>
             </div>
-
-            <br />
-            <strong>Why The Daruma doll?</strong>
-            <p>{darumaWhy}</p>
-            <br />
+            
+            <div className={systemStyle.darumaToggleInfoContainer}>
+              <Fade in={darumaWhatText}>
+                <div id='darumaWhatText' className={systemStyle.darumaToggleInfo}>
+                  <strong>What Is A Daruma doll?</strong>
+                  <p>{darumaInfo}</p>
+                </div>
+              </Fade>
+              <Fade in={darumaText}>
+                <div id="darumaText" className={systemStyle.darumaToggleInfo}>
+                  <div>
+                    <div className={systemStyle.darumaQuote}>
+                      <div className={systemStyle.leftQuote}>
+                        <GoQuote />
+                      </div>
+                      <div className={systemStyle.darumaQuoteText}>
+                        <div>{darumaQuote[0]}</div>
+                        <div>{darumaQuote[1]}</div>
+                      </div>
+                      <div className={systemStyle.rightQuote}>
+                        <GoQuote />
+                      </div>
+                    </div>
+                    <div className={systemStyle.darumaQuoteEnd}>
+                      <strong className={systemStyle.darumaQuoteEnd}>{darumaQuote[3]}</strong>
+                    </div>
+                  </div>
+                </div>
+              </Fade>
+              <Fade in={darumaWhyText}>
+                <div id='darumaWhyText' className={systemStyle.darumaToggleInfo}>
+                  <strong>Why The Daruma doll?</strong>
+                  <p>{darumaWhy}</p>
+                </div>
+              </Fade>
+            </div>
           </div>
 
         </section>

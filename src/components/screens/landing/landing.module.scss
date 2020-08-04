@@ -76,7 +76,6 @@
         outline: none;
         box-shadow: none;
     }
-
 }
 .screenContainer{
     display: flex;
@@ -93,6 +92,7 @@
     width: 100vw;
     height: $sectionHeight + $navbarHeight;
     padding-top: $navbarHeight;
+    background-color: #282c34;
 }
 .workSection{
     display: flex;
@@ -172,20 +172,20 @@
 }
 .profileImage {
     margin-top: 10%;
-    width: 250px;
-    height: 250px;
-    position: relative;
+    width: 20vw;
+    height: 20vw;
+    // position: relative;
     overflow: hidden;
     border-radius: 50%;
 }
-
 img {
-    display: inline;
+    display: flex;
     margin: 0 auto;
     margin-left: -25%;
     height: 100%;
     width: auto;
 }
+
 
 
 .body {

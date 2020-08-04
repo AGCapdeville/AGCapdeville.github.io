@@ -7,17 +7,10 @@
   width: 100vw;
   height: auto;
   padding-top: $navbarHeight;
-  background-color: rgb(104, 104, 104)
+  background-color: #282c34
 }
 
-.aboutDaruma{
-  display: flex;
-  justify-content: center;
-  text-align: left;
-  align-items: center;
-  flex-direction: column;
-  width: 70vw;
-}
+
 .mySystemText{
   font-size: 7vh;
   font-weight: bold;
@@ -83,6 +76,7 @@
   z-index: 1;
 }
 
+
 .daruma_shadow_container{
   position: absolute;
   margin-top: 20.5vh;
@@ -117,6 +111,57 @@
 }
 
 
+.darumaToggleInfoOuterContainer{
+  margin-top: 2h;
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+.darumaToggleInfoContainer{
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+}
+.darumaToggleInfo{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: auto;
+  width: 65%;
+}
+.darumaToggleButtonsContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.darumaToggleButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: none;
+  color: white;
+  border: 1px solid goldenrod;
+  height: auto;
+  width: auto;
+  opacity: 0.6;
+  transition: all .5s;
+  padding-bottom: 4px;
+  
+  &:hover{
+      opacity: 1;
+      color: goldenrod;
+      border: 1px solid white;
+      border-color: none;
+  };
+  &:focus{
+      outline: none;
+      box-shadow: none;
+  };
+}
+
+
+
 @media screen and (max-width: 767px){
   .mySystemText{
     font-size: 6vw;
@@ -129,6 +174,12 @@
   }
   .leftQuote{
     padding-left: 10%;
+  }
+  .darumaToggleInfoOuterContainer{
+    width: 75%;
+  }
+  .darumaToggleInfo{
+    width: 75%;
   }
 }
 
