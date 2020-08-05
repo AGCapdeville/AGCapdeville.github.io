@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react'
 import { descrip, languages, frameworks, databases, mySystemText, darumaInfo, darumaWhy, darumaQuote } from '../../../data/data'
 import { useDispatch } from 'react-redux'
 import ScrollTrigger from 'react-scroll-trigger'
-import { GoMailRead, GoQuote } from 'react-icons/go'
+import { GoQuote } from 'react-icons/go'
+import { FiMail } from 'react-icons/fi'
 import { TiSocialFacebook, TiSocialLinkedin, TiSocialGithub } from 'react-icons/ti'
 import darumaImg from '../../../daruma.png'
 
@@ -185,21 +186,15 @@ const Home = () => {
 
             <div className={systemStyle.darumaToggleButtonsContainer}>
               <button
-                onClick={() => toggleDarumaText('why')}
-                aria-controls="darumaWhyText"
-                aria-expanded={darumaWhyText}
-                className={systemStyle.darumaToggleButton}
-              >
-                Why Daruma?
+                  onClick={() => toggleDarumaText('daruma')}
+                  aria-controls="darumaText"
+                  aria-expanded={darumaText}
+                  className={systemStyle.darumaToggleButton}
+                  opacity={darumaText}
+                >
+                  Daruma Proverb.
               </button>
-              <button
-                onClick={() => toggleDarumaText('daruma')}
-                aria-controls="darumaText"
-                aria-expanded={darumaText}
-                className={systemStyle.darumaToggleButton}
-              >
-                - Daruma -
-              </button>
+                
               <button
                 onClick={() => toggleDarumaText('what')}
                 aria-controls="darumaWhatText"
@@ -207,6 +202,15 @@ const Home = () => {
                 className={systemStyle.darumaToggleButton}
               >
                 What Is Daruma?
+              </button>
+
+              <button
+                onClick={() => toggleDarumaText('why')}
+                aria-controls="darumaWhyText"
+                aria-expanded={darumaWhyText}
+                className={systemStyle.darumaToggleButton}
+              >
+                Why Daruma?
               </button>
             </div>
             
@@ -257,22 +261,22 @@ const Home = () => {
           <div className={style.sectionTitle}>Lets connect,</div>
           <Row className={style.contactIconContainer}>
             <div
-              className={style.contactIcon}
+              className={style.contactIcon} style={{backgroundColor:'#08a0e9'}}
               onClick={() => window.location.href = "mailto:agcapdeville@gmail.com"} target="_blank" >
-              <GoMailRead className={style.icon} />
+              <FiMail className={style.icon} />
             </div>
             <a
-              className={style.contactIcon}
+              className={style.contactIcon} style={{backgroundColor:'dodgerblue'}}
               href="https://www.facebook.com/adam.capdeville.90" target="_blank" >
               <TiSocialFacebook className={style.icon} />
             </a>
             <a
-              className={style.contactIcon}
+              className={style.contactIcon} style={{backgroundColor:'#0E76AE'}}
               href="https://www.linkedin.com/in/adamcapdeville/" target="_blank" >
               <TiSocialLinkedin className={style.icon} />
             </a>
             <a
-              className={style.contactIcon}
+              className={style.contactIcon} style={{backgroundColor:'purple'}}
               href="https://github.com/AGCapdeville" target="_blank" >
               <TiSocialGithub className={style.icon} />
             </a>

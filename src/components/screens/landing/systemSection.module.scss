@@ -90,7 +90,7 @@
   z-index: 0;
   border-radius: 50%;
   background: black;
-  opacity: .5;
+  opacity: .26;
   -webkit-animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
   animation: shadow 2s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-animation-iteration-count: infinite;
@@ -103,7 +103,7 @@
   z-index: 0;
   border-radius: 50%;
   background: black;
-  opacity: .5;
+  opacity: .35;
   -webkit-animation: shadow_m 2s cubic-bezier(0.645, 0.045, 0.355, 1);
   animation: shadow_m 2s cubic-bezier(0.645, 0.045, 0.355, 1);
   -webkit-animation-iteration-count: infinite;
@@ -149,15 +149,17 @@
   padding-bottom: 4px;
   
   &:hover{
-      opacity: 1;
-      color: goldenrod;
-      border: 1px solid white;
-      border-color: none;
+    opacity: 1;
+    color: goldenrod;
+    border: 1px solid goldenrod;
   };
   &:focus{
-      outline: none;
-      box-shadow: none;
+    outline: none;
+    box-shadow: none;
   };
+  &:active{
+    opacity: 1;
+  }
 }
 
 
