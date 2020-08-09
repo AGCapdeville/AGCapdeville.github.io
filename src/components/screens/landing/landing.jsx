@@ -61,7 +61,7 @@ const scrollToRef = (ref) => {
   })
 }
 
-const Home = () => {
+const Landing = () => {
 
 
   const [darumaText, setDarumaText] = useState(true);
@@ -123,21 +123,21 @@ const Home = () => {
       </div>
 
       <Navbar collapseOnSelect bsPrefix='navbar' expand="md" variant="dark" className={style.navbar}>
-        <Navbar.Brand href="#home" >Adam Capdeville.</Navbar.Brand>
+        <Navbar.Brand href="#home" >Adam Capdeville</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
         <Navbar.Collapse id="responsive-navbar-nav" className={style.navbarColapse}>
-          <Nav.Link eventKey="1" className={style.navLink} onClick={() => scrollToRef(homeRef)}>Home.</Nav.Link>
-          <Nav.Link eventKey="2" className={style.navLink} onClick={() => scrollToRef(aboutRef)}>About.</Nav.Link>
-          <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work.</Nav.Link>
-          <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System.</Nav.Link>
-          <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact.</Nav.Link>
+          <Nav.Link eventKey="1" className={style.navLink} onClick={() => scrollToRef(homeRef)}>Home</Nav.Link>
+          <Nav.Link eventKey="2" className={style.navLink} onClick={() => scrollToRef(aboutRef)}>About</Nav.Link>
+          <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work</Nav.Link>
+          <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System</Nav.Link>
+          <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact</Nav.Link>
         </Navbar.Collapse>
       </Navbar>
 
       <div className={style.screenContainer}>
 
         <section ref={aboutRef} id='About' className={style.aboutSection}>
-          <strong className={style.sectionTitle}>About.</strong>
+          <strong className={style.sectionTitle}>About</strong>
           <div className={style.profileImage}>
             <img
               src="https://i.imgur.com/NYjsR8e.jpg"
@@ -154,7 +154,7 @@ const Home = () => {
 
         <section ref={workRef} id='Work' className={style.workSection}>
           <br />
-          <strong className={style.sectionTitle}>Work.</strong>
+          <strong className={style.sectionTitle}>Work</strong>
           <br />
           <CurrentRepo />
           <br />
@@ -162,7 +162,7 @@ const Home = () => {
         </section>
 
         <section ref={systemRef} id='System' className={systemStyle.systemSection}>
-          <strong className={style.sectionTitle}>My System.</strong>
+          <strong className={style.sectionTitle}>My System</strong>
           <br />
 
           {mySystemText.map(line => (
@@ -290,4 +290,4 @@ const Home = () => {
     </div>
   )
 }
-export default Home;
+export default Landing;
