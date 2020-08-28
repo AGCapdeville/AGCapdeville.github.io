@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { user } from '../../data/data';
-import { Col } from 'react-bootstrap';
-import { DiJavascript1 } from 'react-icons/di';
-import { DiJava, DiPython } from 'react-icons/di';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { user } from "../../data/data";
+import { Col } from "react-bootstrap";
+import { DiJavascript1 } from "react-icons/di";
+import { DiJava, DiPython } from "react-icons/di";
 
-import style from './github.module.scss';
+import style from "./github.module.scss";
 
-const useGithubApi = url => {
+const useGithubApi = (url) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -16,18 +16,16 @@ const useGithubApi = url => {
     const fetchData = async () => {
       setIsError(false);
       setIsLoading(true);
-      axios(
-        {
-          method: "get",
-          url: url,
-        }
-      )
-        .then(res => {
+      axios({
+        method: "get",
+        url: url,
+      })
+        .then((res) => {
           console.log(" Response: \n", res);
           setData(res.data);
           setIsLoading(false);
         })
-        .catch(err => {
+        .catch((err) => {
           setIsError(true);
         });
     };
@@ -35,7 +33,7 @@ const useGithubApi = url => {
   }, [url]);
 
   return [{ data, isLoading, isError }];
-}
+};
 
 function iNewestRepo(obj) {
   var numRepos = Object.keys(obj).length;
@@ -50,12 +48,25 @@ function iNewestRepo(obj) {
       curRepo = i;
     }
   }
-  return (curRepo);
+  return curRepo;
 }
 
 function getMonthName(monthNumber) {
-  var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  return (month[monthNumber]);
+  var month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  return month[monthNumber];
 }
 
 export default () => {
@@ -63,7 +74,7 @@ export default () => {
   const [{ data, isLoading }] = useGithubApi(url);
 
   if (isLoading) {
-    return ("loading...");
+    return "loading...";
   } else {
     var current = iNewestRepo(data);
     var link = `https://github.com/${user}/${data[current]["name"]}`;
@@ -79,54 +90,53 @@ export default () => {
 
     const languageIcon = (language) => {
       switch (language) {
-        case 'JavaScript':
+        case "JavaScript":
           return (
             <div className={style.languageIconContainer}>
               <DiJavascript1 className={style.languageIcon} />
             </div>
-          )
-        case 'Python':
+          );
+        case "Python":
           return (
             <div className={style.languageIconContainer}>
               <DiPython className={style.languageIcon} />
-            </div>)
-        case 'Java':
+            </div>
+          );
+        case "Java":
           return (
             <div className={style.languageIconContainer}>
               <DiJava className={style.languageIcon} />
             </div>
-          )
+          );
 
         default:
           return (
             <div className={style.languageIconContainer}>
-            <div className={style.languageIconDefault}> {language} </div>
-          </div>
-          )
+              <div className={style.languageIconDefault}> {language} </div>
+            </div>
+          );
       }
-    }
-
+    };
 
     return (
       <div className={style.reposContainer}>
-        
         {data.map((repo, index) => {
           if (repo.description != null) {
             return (
               <a key={index} href={repo.html_url} target="_blank">
                 <div className={style.repoCard}>
                   <div className={style.repoTitle}>{repo.name}</div>
-                  <div className={style.repoImage}>{languageIcon(repo.language)}</div>
+                  <div className={style.repoImage}>
+                    {languageIcon(repo.language)}
+                  </div>
                   <div className={style.repoText}>{repo.description}</div>
                 </div>
               </a>
-            )
+            );
           }
         })}
-
       </div>
-    )
-
+    );
 
     //   <div className={container}>
     //     <div className={text} > CURRENTLY WORKING ON: </div>

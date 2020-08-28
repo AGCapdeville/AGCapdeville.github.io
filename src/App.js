@@ -1,23 +1,21 @@
 import React from 'react';
-import styles from './app.module.scss';
-import Footer from './components/footer';
+
 import Home from './components/screens/landing';
-import Portfolio from './components/screens/portfolio';
-import FoF from './components/fof';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import Blogs from './components/screens/blogs';
+import Blog from './components/screens/blog';
 
-import { useScreen } from './ducks/screen';
+import { useNav } from './ducks/nav';
 
-const screens = {
+const sections = {
   Home,
-  Portfolio
+  Blogs,
+  Blog
 }
 
 const App = () => {
-  const screen = useScreen();
-  const Screen = screens[screen];
-  return <Screen/>
+  const navigation = useNav();
+  const Navivation = sections[navigation];
+  return <Navivation />
 }
-
 
 export default App;

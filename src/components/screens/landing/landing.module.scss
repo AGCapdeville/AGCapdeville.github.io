@@ -14,7 +14,7 @@
     flex-direction: row;
     justify-content: end;
     flex-grow: 1;
-    // justify-content: center;
+    top: -1px;
     background-color: transparentize($color: black, $amount: .25);
 }
 .navbarColapse{
@@ -30,18 +30,17 @@
     }
 }
 .navLink{
-    font-size: 16px;
+    font-size: $navbarFontSize;
     font-weight: bold;
     display: flex;
-    height: 40px;
-
+    color: white;
     &:hover{
         color: coral;
     }
 }
 
 
-.landingContainer{
+.landingTitle{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,6 +51,11 @@
     color: white;
     font-weight: bold;
     outline: 3px;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 .continueButton{
     display: flex;
@@ -180,7 +184,6 @@
     overflow: hidden;
     border-radius: 50%;
 }
-
 img {
     display: flex;
     justify-content: center;
@@ -256,11 +259,5 @@ img {
         margin-top: 10%;
         width: 38vh;
         height: 38vh;
-    }
-}
-@media (min-height: 50px) {
-    .navbar {
-        position: sticky;
-        top: 0;
     }
 }

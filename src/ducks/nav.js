@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
 
 
-export const setActiveNav = createAction('screen/SET_ACTIVE_NAV');
+export const setActiveNav = createAction('nav/SET_ACTIVE_NAV');
 
-const initialNavState = 'aboutRef';
+const initialNavState = 'Blog';
 
 export default handleActions({
     [setActiveNav]: (state, action) => state = action.payload,

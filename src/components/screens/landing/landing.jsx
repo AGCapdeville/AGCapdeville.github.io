@@ -23,7 +23,7 @@ import './fadeIn.css'
 import Space from '../../space';
 import Footer from '../../footer';
 
-import { useNav, setActiveNav } from '../../../ducks/nav';
+import { setActiveNav } from '../../../ducks/nav';
 import { white, green } from "color-name";
 
 import CurrentRepo from '../../currentRepo/currentRepo.jsx';
@@ -63,33 +63,30 @@ const scrollToRef = (ref) => {
 
 const Landing = () => {
 
+  const dispatch = useDispatch();
 
   const [darumaText, setDarumaText] = useState(true);
   const [darumaWhyText, setWhyText] = useState(false);
   const [darumaWhatText, setWhatText] = useState(false);
 
   const toggleDarumaText = (text) => {
-    console.log('toggle:', text);
     switch (text) {
       case 'daruma':
         setDarumaText(true);
         setWhyText(false);
         setWhatText(false);
-        console.log('inside: daruma');
         break;
 
       case 'why':
         setDarumaText(false);
         setWhyText(true);
         setWhatText(false);
-        console.log('inside: why');
         break;
 
       case 'what':
         setDarumaText(false);
         setWhyText(false);
         setWhatText(true);
-        console.log('inside: what');
         break;
 
       default:
@@ -105,10 +102,11 @@ const Landing = () => {
   const contactRef = useRef(null)
 
   return (
+    
     <div className={style.body}>
 
       <div>
-        <div ref={homeRef} className={style.landingContainer}>
+        <div ref={homeRef} className={style.landingTitle}>
           <div>Hello, I'm <strong style={{ color: 'coral' }}>Adam Capdeville</strong>.</div>
           <div>I'm a full-stack software engineer.</div>
           <br />
@@ -122,8 +120,8 @@ const Landing = () => {
         <Space />
       </div>
 
-      <Navbar collapseOnSelect bsPrefix='navbar' expand="md" variant="dark" className={style.navbar}>
-        <Navbar.Brand href="#home" >Adam Capdeville</Navbar.Brand>
+      <Navbar sticky="top" collapseOnSelect bsPrefix='navbar' expand="md" variant="dark" className={style.navbar}>
+        <Navbar.Brand href="#home" className={style.navLink}>Adam Capdeville</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
         <Navbar.Collapse id="responsive-navbar-nav" className={style.navbarColapse}>
           <Nav.Link eventKey="1" className={style.navLink} onClick={() => scrollToRef(homeRef)}>Home</Nav.Link>
@@ -131,17 +129,17 @@ const Landing = () => {
           <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work</Nav.Link>
           <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System</Nav.Link>
           <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact</Nav.Link>
+          <Nav.Link href="#devblog" eventKey="6" className={style.navLink} onClick={() => { scrollToRef(homeRef); dispatch(setActiveNav('Blogs')) }}>Dev Blog</Nav.Link>
         </Navbar.Collapse>
-      </Navbar>
+      </Navbar> 
 
       <div className={style.screenContainer}>
 
         <section ref={aboutRef} id='About' className={style.aboutSection}>
-          <strong className={style.sectionTitle}>About</strong>
+          {/* <strong className={style.sectionTitle}></strong> */}
           <div className={style.profileImage}>
             <img
               src="https://i.imgur.com/NYjsR8e.jpg"
-              // className="rounded-circle"
               alt="profile img"
             />
           </div>
@@ -159,6 +157,8 @@ const Landing = () => {
           <CurrentRepo />
           <br />
           <GitHub />
+          <br />
+
         </section>
 
         <section ref={systemRef} id='System' className={systemStyle.systemSection}>

@@ -1,0 +1,92 @@
+@import "../../../design-patterns/constants.scss";
+
+
+
+.blogScreenTitle{
+    display: flex;
+    width:100%;
+    justify-content: center; 
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    font-stretch: expanded;
+    font-size: calc(5vh + 5vw);
+    top: 25vh;
+    z-index: 99;
+
+    color: coral;
+    outline-color: darkcyan;
+    outline-style: solid;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.blogContainer {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    background-color: whitesmoke;
+
+    width: 100%;
+    height: 200vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    padding-top: 75vh;
+    margin-top: -$navbarHeight;
+}
+
+.abstractContainer{
+    display: flex;
+    width: 100%;
+    background: white;
+}
+
+.abstract{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-size: 12px;
+}
+
+.abstractText{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.entry{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 5vh;
+    padding: 10px;
+
+}
+
+.heroImageContainer{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+}
+.heroImage{
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+}
+
+
+.navbar {
+    height: $navbarHeight;
+    z-index: 9999;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: end;
+    flex-grow: 1;
+    background-color: transparentize($color: black, $amount: .25);
+    top: -1px;
+}

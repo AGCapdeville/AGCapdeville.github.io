@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import screen from './screen'
 import nav from './nav'
+import blog from './blog'
 
 
 export default combineReducers({
-    screen,
-    nav
+    nav,
+    blog
 })
