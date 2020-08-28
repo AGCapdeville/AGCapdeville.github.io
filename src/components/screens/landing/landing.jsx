@@ -65,15 +65,8 @@ const scrollToRef = (ref) => {
 
 const Landing = () => {
 
-  var pathArray = window.location.pathname.split('/');
-  console.log('path:', pathArray[1])
-
 
   const dispatch = useDispatch();
-
-  if ( pathArray[1] === 'blogs' ){
-   dispatch(setActiveNav('Blogs')) 
-  }
 
   const [darumaText, setDarumaText] = useState(true);
   const [darumaWhyText, setWhyText] = useState(false);
