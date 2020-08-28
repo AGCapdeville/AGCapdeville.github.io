@@ -29,6 +29,8 @@ import { white, green } from "color-name";
 import CurrentRepo from '../../currentRepo/currentRepo.jsx';
 
 import GitHub from '../../github'
+// import { blogs } from '../../../data/blogs'
+
 
 const Language = (language) => <li>{language}</li>;
 const Framework = (framework) => <li>{framework}</li>;
@@ -63,7 +65,15 @@ const scrollToRef = (ref) => {
 
 const Landing = () => {
 
+  var pathArray = window.location.pathname.split('/');
+  console.log('path:', pathArray[1])
+
+
   const dispatch = useDispatch();
+
+  if ( pathArray[1] === 'blogs' ){
+   dispatch(setActiveNav('Blogs')) 
+  }
 
   const [darumaText, setDarumaText] = useState(true);
   const [darumaWhyText, setWhyText] = useState(false);
@@ -121,7 +131,7 @@ const Landing = () => {
       </div>
 
       <Navbar sticky="top" collapseOnSelect bsPrefix='navbar' expand="md" variant="dark" className={style.navbar}>
-        <Navbar.Brand href="#home" className={style.navLink}>Adam Capdeville</Navbar.Brand>
+        <Navbar.Brand className={style.navLink}>Adam Capdeville</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
         <Navbar.Collapse id="responsive-navbar-nav" className={style.navbarColapse}>
           <Nav.Link eventKey="1" className={style.navLink} onClick={() => scrollToRef(homeRef)}>Home</Nav.Link>
@@ -129,7 +139,7 @@ const Landing = () => {
           <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work</Nav.Link>
           <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System</Nav.Link>
           <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact</Nav.Link>
-          <Nav.Link href="#devblog" eventKey="6" className={style.navLink} onClick={() => { scrollToRef(homeRef); dispatch(setActiveNav('Blogs')) }}>Dev Blog</Nav.Link>
+          <Nav.Link eventKey="6" className={style.navLink} onClick={() => { scrollToRef(homeRef); dispatch(setActiveNav('Blogs')) }}>Dev Blog</Nav.Link>
         </Navbar.Collapse>
       </Navbar> 
 

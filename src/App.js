@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Route} from 'react-router';
+
 import Home from './components/screens/landing';
 import Blogs from './components/screens/blogs';
 import Blog from './components/screens/blog';

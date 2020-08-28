@@ -36,7 +36,7 @@ const Blogs = () => {
     <div ref={topOfScreenRef} className='blogContainer'>
 
       <Navbar sticky="top" bsPrefix='navbar' variant="dark" className={style.navbar}>
-        <Navbar.Brand href="#home" className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
+        <Navbar.Brand className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
       </Navbar>
 

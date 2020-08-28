@@ -90,3 +90,12 @@
     background-color: transparentize($color: black, $amount: .25);
     top: -1px;
 }
+.navLink{
+    font-size: $navbarFontSize;
+    font-weight: bold;
+    display: flex;
+    color: white;
+    &:hover{
+        color: coral;
+    }
+}
