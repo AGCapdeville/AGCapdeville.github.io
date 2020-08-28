@@ -5,7 +5,7 @@ import { createSelector } from "reselect";
 
 export const setActiveNav = createAction('nav/SET_ACTIVE_NAV');
 
-const initialNavState = 'Blog';
+const initialNavState = 'Home';
 
 export default handleActions({
     [setActiveNav]: (state, action) => state = action.payload,
