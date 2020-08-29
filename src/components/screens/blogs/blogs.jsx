@@ -53,7 +53,7 @@ const Blogs = () => {
       <div className={style.blogList}>
         {blogs.map((blog, index) => (
           <div>
-            <a href="/blog">
+            <a href="/blog" className={style.blogLink}>
               <Card key={index} className={style.blogCard} onClick={() => 
                 { 
                   scrollToRef(topOfScreenRef)
