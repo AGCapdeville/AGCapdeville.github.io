@@ -162,3 +162,12 @@
         color: coral;
     }
 }
+
+
+.blogLink{
+    color: dodgerblue;
+    &:hover{
+        background-color: white;
+        text-decoration: none;
+    }
+}

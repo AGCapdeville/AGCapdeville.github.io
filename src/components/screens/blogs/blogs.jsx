@@ -7,7 +7,6 @@ import { setActiveNav } from '../../../ducks/nav';
 import { blogs } from "../../../data/blogs"
 import { setBlog } from "../../../ducks/blog";
 
-
 import {
   Navbar,
   Card
@@ -36,7 +35,7 @@ const Blogs = () => {
     <div ref={topOfScreenRef} className='blogContainer'>
 
       <Navbar sticky="top" bsPrefix='navbar' variant="dark" className={style.navbar}>
-        <Navbar.Brand className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
+        <Navbar.Brand href="/home" className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
       </Navbar>
 
@@ -53,21 +52,23 @@ const Blogs = () => {
   
       <div className={style.blogList}>
         {blogs.map((blog, index) => (
-          <div> 
-            <Card key={index} className={style.blogCard} onClick={() => 
-              { 
-                scrollToRef(topOfScreenRef)
-                dispatch(setBlog(blog.blog))
-                dispatch(setActiveNav('Blog'));
-              }}>
-                
-              <Card.Body>
-                <Card.Title className={style.blogCardTitle}><strong>{blog.title}</strong> </Card.Title>
-                <Card.Text> {blog.description} </Card.Text>
-                <Card.Subtitle className={style.blogCardDate}> {blog.date} </Card.Subtitle>
-              </Card.Body>
+          <div>
+            <a href="/blog" className={style.blogLink}>
+              <Card key={index} className={style.blogCard} onClick={() => 
+                { 
+                  scrollToRef(topOfScreenRef)
+                  dispatch(setBlog(blog.blog))
+                  // dispatch(setActiveNav('Blog'));
+                }}>
+                  
+                <Card.Body>
+                  <Card.Title className={style.blogCardTitle}><strong>{blog.title}</strong> </Card.Title>
+                  <Card.Text> {blog.description} </Card.Text>
+                  <Card.Subtitle className={style.blogCardDate}> {blog.date} </Card.Subtitle>
+                </Card.Body>
 
-            </Card>
+              </Card>
+            </a>
             <hr/>
           </div>
         ))}

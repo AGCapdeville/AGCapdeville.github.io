@@ -11,26 +11,43 @@ import Blog from './components/screens/blog';
 import { useNav, setActiveNav } from './ducks/nav';
 
 
-const sections = {
-  Home,
-  Blogs,
-  Blog
+import {Switch, Route, NavLink, Redirect} from "react-router-dom";
+
+
+
+// const sections = {
+//   Home,
+//   Blogs,
+//   Blog
+// }
+
+
+function App() {
+  return(
+    <Switch>
+      <Route path={"/"} exact component={Home} />
+      <Route path={"/blogs"} exact component={Blogs} />
+      <Route path={"/blog"} exact component={Blog} />
+      <Redirect to={"/"} />
+    </Switch>
+  )
 }
 
-const App = () => {
-  const navigation = useNav();
 
-  var pathArray = window.location.pathname.split('/');
-  console.log('path:', pathArray[1])
+// const App = () => {
+//   const navigation = useNav();
 
-  const dispatch = useDispatch();
+//   var pathArray = window.location.pathname.split('/');
+//   console.log('path:', pathArray[1])
 
-  if ( pathArray[1] === 'blog' ){
-    dispatch(setActiveNav('Blog')) 
-   }
+//   const dispatch = useDispatch();
 
-  const Navivation = sections[navigation];
-  return <Navivation />
-}
+//   if ( pathArray[1] === 'blog' ){
+//     dispatch(setActiveNav('Blog')) 
+//    }
+
+//   const Navivation = sections[navigation];
+//   return <Navivation />
+// }
 
 export default App;
