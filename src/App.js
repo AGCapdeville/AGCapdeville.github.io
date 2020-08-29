@@ -19,6 +19,7 @@ function App() {
       <Switch>
         <Route path={"/"} exact component={Home} />
         <Route path={"/blogs"} exact component={Blogs} />
+        <Route path={"/blog"} exact component={Blog} />
         <Redirect to={"/"} />
       </Switch>
     </div>

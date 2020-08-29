@@ -31,7 +31,7 @@ const Blogs = () => {
     <div ref={topOfScreenRef} className='blogContainer'>
 
       <Navbar sticky="top" bsPrefix='navbar' variant="dark" className={style.navbar}>
-        <Navbar.Brand className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
+        <Navbar.Brand href="/" className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
       </Navbar>
 
@@ -49,6 +49,7 @@ const Blogs = () => {
       <div className={style.blogList}>
         {blogs.map((blog, index) => (
           <div>
+              <a href="/blog">
               <Card key={index} className={style.blogCard} onClick={() => 
                 { 
                   scrollToRef(topOfScreenRef)
@@ -62,6 +63,7 @@ const Blogs = () => {
                   <Card.Subtitle className={style.blogCardDate}> {blog.date} </Card.Subtitle>
                 </Card.Body>
               </Card>
+              </a>
             <hr/>
           </div>
         ))}
