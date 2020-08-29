@@ -19,7 +19,7 @@ const Blog = () => {
         <div>
 
             <Navbar sticky="top" bsPrefix='navbar' variant="dark" className={style.navbar}>
-                <Navbar.Brand className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
+                <Navbar.Brand href="/" className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
             </Navbar>
 
