@@ -76,18 +76,14 @@ const CurrentRepo = () => {
       <div className={style.container}>
        
         <div className={style.repoRow}>
-          <div className={style.repo}>
-            <div className={style.text} >
-              Most Recent Commit: [
-              <a href={link} className={style.repoLink} target="_blank">
-                {data[current].name} 
-              </a>]
-            </div>
-            [<div className={style.dateText}> {updated} </div>]
-          </div>
+          Most Recent Commit:
+          <a href={link} className={style.repoLink} target="_blank">
+            [{data[current].name}]
+          </a>            
+          <div className={style.dateText}> [{updated}] </div>
         </div>
 
-        <div className={style.repoRow}>
+        <div>
           GitHub Repo Total:
           [<a className={style.repoLink} href={'https://github.com/AGCapdeville?tab=repositories'} target="_blank"> 
             {data.length} 

@@ -18,19 +18,19 @@
     background-color: #363636;
 
     
-    transition-duration: .25s;
+    transition-duration: .1s;
     transition-property: transform;
 
     color: white;
     background-color: rgb(104, 104, 104);
 
 	&:hover {
-		transform: translateY(-15%); /* move the element up by 5px */
+		transform: translateY(-10%); /* move the element up by 5px */
         color: coral;
 
 		&:before {
 			opacity: 1;
-			transform: translateY(15%); /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+			transform: translateY(10%); /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 		}
 	}
 
@@ -103,3 +103,9 @@
 
 }
 
+.repoLink {
+    color: dodgerblue;
+    &:hover{
+        text-decoration: none;
+    }
+}

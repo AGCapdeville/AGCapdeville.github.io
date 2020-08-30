@@ -18,5 +18,3 @@ ReactDOM.render(
     </BrowserRouter>,
     rootElement
 );
-
-

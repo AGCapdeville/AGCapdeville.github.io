@@ -14,6 +14,9 @@ import {
   Fade,
 } from 'react-bootstrap'
 
+import { Link } from 'react-router-dom';
+
+
 import style from './landing.module.scss'
 import systemStyle from './systemSection.module.scss';
 
@@ -131,7 +134,7 @@ const Landing = () => {
           <Nav.Link eventKey="3" className={style.navLink} onClick={() => scrollToRef(workRef)}>Work</Nav.Link>
           <Nav.Link eventKey="4" className={style.navLink} onClick={() => scrollToRef(systemRef)}>System</Nav.Link>
           <Nav.Link eventKey="5" className={style.navLink} onClick={() => scrollToRef(contactRef)}>Contact</Nav.Link>
-          <Nav.Link href="/blogs" eventKey="6" className={style.navLink} onClick={() => { scrollToRef(homeRef); dispatch(setActiveNav('Blogs')) }}>Dev Blog</Nav.Link>
+          <Nav.Link as={Link} to="/blogs" eventKey="6" className={style.navLink} onClick={() => { scrollToRef(homeRef); dispatch(setActiveNav('Blogs')) }}>Dev Blog</Nav.Link>
         </Navbar.Collapse>
       </Navbar> 
 

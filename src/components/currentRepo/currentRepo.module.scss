@@ -12,9 +12,7 @@
   margin: 10px;
   padding: 10px;
 
-  font-size: 18px;
   font-weight: bold;
-
 
   border-color: #7777;
   border-style: solid;
@@ -23,6 +21,7 @@
 .repoRow{
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
 }
 
@@ -31,20 +30,24 @@
   align-items: center;
   flex-direction: row;
   margin: 5px;
-  font-size: 18px;
 }
 
 .repoLink{
+  color: whitesmoke;
+  opacity: .5;
   font-weight: bold;
 
   &:hover{
     color: coral;
+    opacity: 1;
+    text-decoration: none;
   }
 }
 
 .dateRow{
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: row;
 }
 
@@ -53,17 +56,15 @@
   margin-left: 5px;
   margin-right: 5px;
   font-weight: bold;
-  color: rgb(0, 88, 0);
+  color: whitesmoke;
+  opacity: .5;
 }
 
 
 
-@media screen and (max-width: 550px) {
-  .text{
-    font-size: 10px;
-  }
+@media screen and (max-width: 750px) {
   .repoRow{
-    font-size: 12px;
+    flex-direction: column;
   }
   .dateRow{
     display: none;

@@ -10,6 +10,8 @@ import {
     Card
 } from 'react-bootstrap'
 
+import { Link } from 'react-router-dom';
+
 
 const Blog = () => {
     const dispatch = useDispatch();
@@ -19,7 +21,7 @@ const Blog = () => {
         <div>
 
             <Navbar sticky="top" bsPrefix='navbar' variant="dark" className={style.navbar}>
-                <Navbar.Brand href="/" className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
             </Navbar>
 

@@ -123,7 +123,7 @@ export default () => {
         {data.map((repo, index) => {
           if (repo.description != null) {
             return (
-              <a key={index} href={repo.html_url} target="_blank">
+              <a className={style.repoLink} key={index} href={repo.html_url} target="_blank">
                 <div className={style.repoCard}>
                   <div className={style.repoTitle}>{repo.name}</div>
                   <div className={style.repoImage}>
