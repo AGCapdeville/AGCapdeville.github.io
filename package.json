@@ -20,7 +20,7 @@
     "react-scroll-trigger": "^0.6.5",
     "reactstrap": "^8.5.1",
     "redux-devtools-extension": "^2.13.8",
-    "yarn": "^1.19.1"
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
