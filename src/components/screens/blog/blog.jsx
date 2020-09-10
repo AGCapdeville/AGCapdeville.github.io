@@ -41,7 +41,7 @@ const Blog = () => {
                         <p className={style.abstractText}>{blog.abstract}</p>
                     </div>
                 </Card>
-
+                
                 {blog.entry.map( (e, index) => (
                     <Card className={style.entry} key={index}>
                         <Card.Title>{e.title}</Card.Title>
@@ -49,7 +49,11 @@ const Blog = () => {
                         {e.description.map( (descr, i) => (
                             <>
                             <Card.Body key={i}> {descr} </Card.Body>
-                            <Card.Body> <img src={e.img[i]}/> </Card.Body>
+                            {e.img[i] && 
+                                (<Card.Body className={style.entryImageContainer} > 
+                                    <img className={style.entryImage} src={e.img[i]}/> 
+                                </Card.Body>
+                                )}
                             </>
                         ))}
                     </Card>
