@@ -64,6 +64,7 @@ const Blogs = () => {
                     <Card.Text> {blog.description} </Card.Text>
                     <Card.Subtitle className={style.blogCardDate}> {blog.date} </Card.Subtitle>
                   </Card.Body>
+                  
                 </Card>
               </Link>
             <hr/>

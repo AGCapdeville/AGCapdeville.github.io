@@ -44,22 +44,40 @@ const Blog = () => {
                 
                 {blog.entry.map( (e, index) => (
                     <Card className={style.entry} key={index}>
-                        <Card.Title>{e.title}</Card.Title>
+                        <h4>
+                            <strong>
+                                {e.title}
+                            </strong>
+                        </h4>
+                        <h5>
+                            <strong>
+                                {e.subtitle}
+                            </strong>
+                        </h5>
                         <Card.Subtitle>{e.date}</Card.Subtitle>
                         {e.description.map( (descr, i) => (
                             <>
                             <Card.Body key={i}> {descr} </Card.Body>
+
                             {e.img[i] && 
                                 (<Card.Body className={style.entryImageContainer} > 
                                     <img className={style.entryImage} src={e.img[i]}/> 
-                                </Card.Body>
-                                )}
+                                </Card.Body>)
+                            }
+                            {e.vid[i] && 
+                                (<Card.Body>
+                                    <div className={style.entryVideoContainer}>
+                                        <video className={style.entryVideo} controls>
+                                            <source src={e.vid[i]} type="video/mp4"/>
+                                        </video>                                
+                                    </div> 
+                                </Card.Body>)
+                            }
                             </>
                         ))}
                     </Card>
                 ))}
-
-
+                <br/>
             </div>
 
         </div>
