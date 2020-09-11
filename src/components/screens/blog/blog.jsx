@@ -3,7 +3,8 @@ import style from "./blog.module.scss";
 
 import { useDispatch } from 'react-redux'
 import { setActiveNav } from '../../../ducks/nav';
-import { useBlog } from '../../../ducks/blog';
+import { useBlog, setBlog } from '../../../ducks/blog';
+import { blogs } from '../../../data/blogs'
 
 import {
     Navbar,
@@ -41,7 +42,9 @@ const Blog = () => {
                         <p className={style.abstractText}>{blog.abstract}</p>
                     </div>
                 </Card>
-                
+
+                {console.log('hello map?', blog)}
+
                 {blog.entry.map( (e, index) => (
                     <Card className={style.entry} key={index}>
                         <h4>

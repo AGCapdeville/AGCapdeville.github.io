@@ -7,6 +7,8 @@ import { setActiveNav } from '../../../ducks/nav';
 import { blogs } from "../../../data/blogs"
 import { setBlog } from "../../../ducks/blog";
 
+
+
 import { Link } from 'react-router-dom';
 
 import {
@@ -27,7 +29,9 @@ const Blogs = () => {
   const dispatch = useDispatch()
 
   const topOfScreenRef = useRef(null)
-  
+
+  console.log("AHHH")
+  console.log('blogs:', blogs[0].blog)
 
   return (
     <div ref={topOfScreenRef} className='blogContainer'>
@@ -64,7 +68,7 @@ const Blogs = () => {
                     <Card.Text> {blog.description} </Card.Text>
                     <Card.Subtitle className={style.blogCardDate}> {blog.date} </Card.Subtitle>
                   </Card.Body>
-                  
+
                 </Card>
               </Link>
             <hr/>
