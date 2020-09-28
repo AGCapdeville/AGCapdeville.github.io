@@ -66,9 +66,9 @@ export const blogs = [
                 'I sketched up some ideas on how to view cards in the browser, at first I tired to recreate enlarging the cards as the mouse and or touch-drag action occurs. My problem so far is with the touch-drag action, I have not been able to figure out how a this action can occur via JavaScript etc. So for now I paused this task and moved onto continueing development of the combat UI. I have still not decided on a complete layout yet, but for now this is what I have so far:',
                 'Displaying the party on the left hand side of the screen, in traditional JRPG fashion. The players status bar at the top of the screen, now reworked to display Gold, Defense & Health of the party. I simplified how health and defense is displayed. I fixed the issue of being able to click end-turn over and over.',
                 'I reworked the json data objects to include the new party battle mechanics. Currently all cards have been updated to have a party requirements to be played. Party Requirements:','Now that I have the player-data and card-data json objects updated, I need to rework how monsters and combat are done. I will be adding buffs / debuffs and hero status ailments. With these new mechanics I need to figure out how React/Redux will parse and store these conditions. These past two weeks, I learned that I need to plan more ahead of implementing a combat system, having to rework a standing code base can be messy and complicated. If I had thought of these mechanics beforehand, I could have saved myself some time and energy.',
-                '[Side Note] The demo of the game is now in the header of blog.'],
+                ,'Current Issue: viewing cards in hand.','Hover effect (Desktop):','Hover effect (Mobile), [not working as intended]','[Side Note] The demo of the game is now in the header of blog.',''],
                 img: [,,],
-                simg: [,'https://i.imgur.com/EYJfg5z.png',,'https://i.imgur.com/s6IjTjF.png'],
+                simg: [,'https://i.imgur.com/EYJfg5z.png',,,'https://i.imgur.com/s6IjTjF.png',,,'https://i.imgur.com/UOu3jQQ.gif','https://i.imgur.com/3x6TXxF.gif'],
                 vid: []
             }
         ]
