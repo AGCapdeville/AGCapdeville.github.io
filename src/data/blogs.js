@@ -3,6 +3,7 @@ export const blogs = [
         title:'Capstone Dev Blog',
         abstract:'Slay The Tower is a dynamic deck building video game developed in React / Redux to create a sleek and unique user experience. Players start the game by selecting a hero’s weapon (deck) to begin their arduous climb. As the hero progresses, they must balance risk and reward. Defeating enemies grants gold and cards, but choosing to fight dire foes has the possibility to grant even greater treasures. Players must choose cards wisely, as the core of the game is deck building emphasizing on card synergy. With every attempt on the Tower, the player will learn of different strategies and outcomes. My project aims to develop a complex game, all while learning through implementation.',
         heroImage: "https://i.imgur.com/kPXC7j9.jpg",
+        link: 'https://agcapdeville.github.io/SlayTheTower/',
         entry:[
             {
                 title: 'Setup Dev Blog & Narrowing Of Project Scope',
@@ -49,7 +50,7 @@ export const blogs = [
                 vid: []
             },
             {
-                title: 'Delayed Week',
+                title: 'Three Steps Backward',
                 subtitle: 'Sprint 2 : week 4',
                 date: 'September 21, 2020',
                 description: ['This week was a set back week, so nothing to report as of now.'],
@@ -61,28 +62,35 @@ export const blogs = [
                 title: 'Two Steps Forward',
                 subtitle: 'Sprint 3 : week 5',
                 date: 'September 28, 2020',
-                description: ['Spent this last week catching up with all of my work. Worked on developing the combat UI. Ran into a few issues revolving around how cards will be displayed. Cards need to be legiable on both phones and desktop. Usualy for card games on mobile, as you drag your finger across cards in your hand, the cards are displayed larger so to better see the details of the card.']
+                description: ['Spent this last week catching up with all of my work. Worked on developing the combat UI. Ran into a few issues revolving around how cards are displayed and used. Cards need to be legiable on both mobile and desktop enviroments. For card games on mobile devices, usualy as you drag your finger across your hand, cards in your hand are displayed larger. This enlargment of the cards allows users to better see the details of the card.',
+                'I sketched up some ideas on how to view cards in the browser, at first I tired to recreate enlarging the cards as the mouse and or touch-drag action occurs. My problem so far is with the touch-drag action, I have not been able to figure out how a this action can occur via JavaScript etc. So for now I paused this task and moved onto continueing development of the combat UI. I have still not decided on a complete layout yet, but for now this is what I have so far:',
+                'Displaying the party on the left hand side of the screen, in traditional JRPG fashion. The players status bar at the top of the screen, now reworked to display Gold, Defense & Health of the party. I simplified how health and defense is displayed. I fixed the issue of being able to click end-turn over and over.',
+                'I reworked the json data objects to include the new party battle mechanics. Currently all cards have been updated to have a party requirements to be played. Party Requirements:','Now that I have the player-data and card-data json objects updated, I need to rework how monsters and combat are done. I will be adding buffs / debuffs and hero status ailments. With these new mechanics I need to figure out how React/Redux will parse and store these conditions. These past two weeks, I learned that I need to plan more ahead of implementing a combat system, having to rework a standing code base can be messy and complicated. If I had thought of these mechanics beforehand, I could have saved myself some time and energy.',
+                '[Side Note] The demo of the game is now in the header of blog.'],
+                img: [,,],
+                simg: [,'https://i.imgur.com/EYJfg5z.png',,'https://i.imgur.com/s6IjTjF.png'],
+                vid: []
             }
         ]
-    },
-    {
-        title:'Web Dev Blog',
-        date:'../../..',
-        description:'comming soon ...',
-        blog:{
-            title:'Web Dev Blog',
-            abstract: 'info',
-            heroImage: "https://i.imgur.com/Fyji2AK.jpeg",
-            entry:[
-                {
-                    title: 'Initial Capstone Project',
-                    date: 'August 27, 2020',
-                    description: ['Example'],
-                    img: [''],
-                }
-            ]
-        },
-    },
+    }
+    // {
+    //     title:'Web Dev Blog',
+    //     date:'../../..',
+    //     description:'comming soon ...',
+    //     blog:{
+    //         title:'Web Dev Blog',
+    //         abstract: 'info',
+    //         heroImage: "https://i.imgur.com/Fyji2AK.jpeg",
+    //         entry:[
+    //             {
+    //                 title: 'Initial Capstone Project',
+    //                 date: 'August 27, 2020',
+    //                 description: ['Example'],
+    //                 img: [''],
+    //             }
+    //         ]
+    //     },
+    // },
 
 ]
 

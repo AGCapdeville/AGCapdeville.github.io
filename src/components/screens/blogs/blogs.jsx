@@ -30,7 +30,6 @@ const Blogs = () => {
 
   const topOfScreenRef = useRef(null)
 
-  console.log("AHHH")
   console.log('blogs:', blogs[0].blog)
 
   return (
@@ -56,12 +55,14 @@ const Blogs = () => {
         {blogs.map((blog, index) => (
           <div>
               <Link to="/blog" className={style.blogLink}>
+
                 <Card key={index} className={style.blogCard} onClick={() => 
                   { 
                     scrollToRef(topOfScreenRef)
                     dispatch(setBlog(blog.blog))
-                    dispatch(setActiveNav('Blog'));
-                  }}>
+                    dispatch(setActiveNav('Blog'))
+                  }}
+                  >
                     
                   <Card.Body>
                     <Card.Title className={style.blogCardTitle}><strong>{blog.title}</strong> </Card.Title>
@@ -70,6 +71,8 @@ const Blogs = () => {
                   </Card.Body>
 
                 </Card>
+
+
               </Link>
             <hr/>
           </div>
