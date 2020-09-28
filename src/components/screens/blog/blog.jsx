@@ -20,7 +20,6 @@ const Blog = () => {
 
     return(
         <div>
-
             <Navbar sticky="top" bsPrefix='navbar' variant="dark" className={style.navbar}>
                 <Navbar.Brand as={Link} to="/" className={style.navLink} onClick={() => dispatch(setActiveNav('Home'))} >Adam Capdeville</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className={style.navbarToggle} />
@@ -34,6 +33,8 @@ const Blog = () => {
                 <img className={style.heroImage} src={blog.heroImage} />
             </div>
 
+
+
             <div className={style.blogContainer}>
 
                 <Card className={style.abstractContainer}>
@@ -42,8 +43,6 @@ const Blog = () => {
                         <p className={style.abstractText}>{blog.abstract}</p>
                     </div>
                 </Card>
-
-                {console.log('hello map?', blog)}
 
                 {blog.entry.map( (e, index) => (
                     <Card className={style.entry} key={index}>
@@ -58,14 +57,25 @@ const Blog = () => {
                             </strong>
                         </h5>
                         <Card.Subtitle>{e.date}</Card.Subtitle>
+
                         {e.description.map( (descr, i) => (
                             <>
-                            <Card.Body key={i}> {descr} </Card.Body>
+                            
+                            <Card.Body className={style.entryText} key={i}> 
+                                {descr} 
+                            </Card.Body>
 
-                            {e.img[i] && 
-                                (<Card.Body className={style.entryImageContainer} > 
+                            {e.img[i] && (
+                                <Card.Body className={style.entryImageContainer} > 
                                     <img className={style.entryImage} src={e.img[i]}/> 
-                                </Card.Body>)
+                                </Card.Body>
+                                )
+                            }
+                            {e.simg[i] && (
+                                <Card.Body className={style.entrySmallImageContainer} > 
+                                    <img className={style.entrySmallImage} src={e.simg[i]}/> 
+                                </Card.Body>
+                                )
                             }
                             {e.vid[i] && 
                                 (<Card.Body>
